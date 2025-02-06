@@ -1,36 +1,43 @@
-
-import { Menu, Space, Typography, type MenuProps } from 'antd';
+// import { useState } from 'react';
+import { Button, Flex, Menu, type MenuProps } from 'antd';
+import { DownloadOutlined } from '@ant-design/icons';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
 const items: MenuItem[] = [
     {
+        label: 'Home',
+        key: 'home',
+    },
+    {
+        label: 'Projects',
+        key: 'projects',
+    },
+    {
+        label: 'Experience',
+        key: 'experience',
+    },
+    {
         label: 'About',
         key: 'about'
-    },
-    {
-        label: 'Contact',
-        key: 'contact',
-    },
-    {
-        label: 'Test',
-        key: 'test',
     },
 ];
 
 export default function WebHeader() {
     return (
         <>
-            <Space>
-                <Typography.Title level={4} style={{ color: "white" }}>Personal Portfolio</Typography.Title>
+            <Flex align="center">
                 <Menu
                     theme="dark"
                     mode="horizontal"
-                    defaultSelectedKeys={['about']}
+                    defaultSelectedKeys={['home']}
                     items={items}
-                    style={{ flex: 1, minWidth: 0, }}
+                    style={{ flex: 2, minWidth: 0 }}
                 />
-            </Space>
+                <Button iconPosition="end" href="https://tinyurl.com/LamYuEnResume" target="__blank" icon={<DownloadOutlined />}>
+                    Download Resume
+                </Button>
+            </Flex>
         </>
     )
 }
