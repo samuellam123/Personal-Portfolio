@@ -1,13 +1,13 @@
-import { Flex, Typography, Card, Tag, Divider } from "antd";
+import { Flex, Typography, Card, Tag } from "antd";
 
 const { Title, Text } = Typography
 const { Meta } = Card;
 
-export default function Projects() {
+export default function Experience() {
     return (
         <>
             <Flex gap={"large"} vertical style={{ backgroundColor: "#f0f0f0", padding: "5% 5% 0% 5%" }}>
-                <Title>Projects</Title>
+                <Title>Experience</Title>
                 <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     Lorem Ipsu</Text>
 
@@ -69,8 +69,6 @@ export default function Projects() {
                     </Card>
 
                 </Flex>
-
-                <Divider style={{ marginTop: "64px" }} />
             </Flex >
         </>
     )
