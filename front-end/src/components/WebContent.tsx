@@ -1,15 +1,16 @@
-import { Flex, Space } from "antd";
+import { Flex } from "antd";
 import Home from "./Home";
+import Projects from "./Projects";
 
 export default function WebContent() {
     return (
         <>
-            <Space direction="vertical">
+            <Flex vertical>
                 <div id="home"><Home /></div>
-                <div id="projects"><Home /></div>
+                <div id="projects"><Projects /></div>
                 <div id="experience"><Home /></div>
                 <div id="about"><Home /></div>
-            </Space>
+            </Flex>
         </>
     )
 }

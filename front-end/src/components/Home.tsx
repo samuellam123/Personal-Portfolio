@@ -6,8 +6,11 @@ const { Title, Text } = Typography
 export default function Home() {
     return (
         <>
-            <Flex align="center" justify="space-between" style={{ justifySelf: 'center', height: '80vh' }}>
-                <Flex gap='middle' vertical style={{ maxWidth: '60%' }}>
+            <Flex align="center" justify="space-between" style={{
+                justifySelf: 'center', height: '80vh', backgroundColor: 'lightblue', padding: "0 5%"
+            }}
+            >
+                <Flex gap='large' vertical style={{ maxWidth: '60%' }}>
                     <Title>Lam Yu En (Samuel)</Title>
                     <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,

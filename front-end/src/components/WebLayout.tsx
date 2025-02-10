@@ -24,9 +24,6 @@ export default function WebLayout() {
 
                 <Content style={{
                     width: '100%',
-                    flex: 1,
-                    backgroundColor: 'lightblue',
-                    padding: '5%',
                     alignContent: 'center'
                 }}>
                     <WebContent />
