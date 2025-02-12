@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "antd": "^5.23.1"
+    "antd": "^5.23.1",
+    "papaparse": "^5.5.2"
   }
 }

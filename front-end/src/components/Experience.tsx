@@ -1,4 +1,4 @@
-import { Flex, Typography, Card, Tag } from "antd";
+import { Flex, Typography, Card, Tag, Divider } from "antd";
 
 const { Title, Text } = Typography
 const { Meta } = Card;
@@ -69,6 +69,9 @@ export default function Experience() {
                     </Card>
 
                 </Flex>
+
+
+                <Divider style={{ marginTop: "64px" }} />
             </Flex >
         </>
     )
