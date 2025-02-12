@@ -23,7 +23,6 @@ export default function WebLayout() {
                 </Header>
 
                 <Content style={{
-                    width: '100%',
                     alignContent: 'center'
                 }}>
                     <WebContent />
