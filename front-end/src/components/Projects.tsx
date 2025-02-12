@@ -10,11 +10,12 @@ import dbsWebapp from '../assets/images/dbs-webapp.png';
 
 interface Project {
     title: string;
-    img: string;
     description: string;
     frontend: string;
-    backend: string;
-    technology: string[];
+    technology?: string[];
+    backend?: string;
+    img?: string;
+    github?: string;
 }
 
 // List of Projects
@@ -89,13 +90,11 @@ export default function Projects() {
                             xxl: '40%',
                         }}
                         footer={[
-                            <Button
-                                key="link"
-                                href="https://google.com"
-                                target="_blank"
-                            >
-                                View on GitHub
-                            </Button>,
+                            selectedProject.github && (
+                                <Button key="github" href={selectedProject.github} target="_blank">
+                                    View on GitHub
+                                </Button>
+                            ),
                         ]}
                     >
                         <Flex vertical>
@@ -103,10 +102,12 @@ export default function Projects() {
                                 <Image
                                     width={'50%'}
                                     src={selectedProject.img}
+                                    alt={selectedProject.title}
                                 />
                                 <Image
                                     width={'50%'}
                                     src={selectedProject.img}
+                                    alt={selectedProject.title}
                                 />
                             </Flex>
 
@@ -133,10 +134,11 @@ export default function Projects() {
                             </Flex>
                         </Flex>
                     </Modal>
-                )}
-            </Flex>
+                )
+                }
+            </Flex >
 
             <Divider style={{ marginTop: "64px" }} />
-        </Flex>
+        </Flex >
     );
 }
