@@ -11,11 +11,11 @@ export default function Home() {
             }}
             >
                 <Flex gap='large' vertical style={{ maxWidth: '60%' }}>
-                    <Title>Lam Yu En (Samuel)</Title>
-                    <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        It has survived not only five centuries, </Text>
+                    <Title style={{ margin: 0 }}>Lam Yu En (Samuel)</Title>
+                    <Text>Hi, I'm Yu En Lam, a passionate software developer and product designer based in Singapore.
+                        I enjoy building scalable applications, AI-driven solutions, and enhancing user experiences through design.
+                        I am currently seeking a summer 2025 internship (May till Aug).
+                    </Text>
                     <Button href="#projects" icon={<DownOutlined />} type="primary" style={{ minWidth: "200px", maxWidth: "300px" }}>View my projects</Button>
                 </Flex>
                 <Image

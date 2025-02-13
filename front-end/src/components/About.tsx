@@ -7,35 +7,16 @@ export default function About() {
         <>
             <Flex gap={"large"} vertical style={{ backgroundColor: "#f0f0f0", padding: "5%" }}>
                 <Title>About</Title>
-                <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsu</Text>
-                <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsu</Text>
-                <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsu</Text>
-                <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsu</Text>
-                <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsu</Text>
-                <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsu</Text>
-                <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsu</Text>
-                <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsu</Text>
-                <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsu</Text>
-                <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsu</Text>
-                <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsu</Text>
-                <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsu</Text>
-                <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsu</Text>
-                <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsu</Text>
+                <Text>Hi, I'm Yu En Lam, a passionate software developer and product designer based in Singapore. I enjoy building scalable applications, AI-driven solutions, and enhancing user experiences through design.</Text>
 
+                <Title level={4}>Education</Title>
+                SUTD
+
+                <Title level={4}>Skills</Title>
+                PIC PIC PIC
+
+                <Title level={4}>Contact</Title>
+                <p>Contact details</p><p>Contact details</p><p>Contact details</p><p>Contact details</p>
 
             </Flex >
         </>
