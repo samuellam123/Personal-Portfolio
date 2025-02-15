@@ -49,8 +49,11 @@ export default function WebHeader() {
                     <Anchor
                         direction="horizontal"
                         items={items}
+                        offsetTop={64} // Increased offset for mobile header spacing
+                        affix={false} // Prevents fixed positioning interfering with scroll
                         style={{
-                            backgroundColor: 'white', flexWrap: 'nowrap'
+                            backgroundColor: 'white',
+                            flexWrap: 'nowrap'
                         }}
                     >
                     </Anchor>
