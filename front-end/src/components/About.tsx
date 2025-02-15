@@ -41,7 +41,7 @@ const skills = [
 
 // Contact Information
 const contactLinks = [
-    { name: "WhatsApp", url: "https://wa.me/+6588508275", img: "https://cdn-icons-png.flaticon.com/512/733/733585.png" },
+    { name: "WhatsApp", url: "https://wa.me/6588508275", img: "https://cdn-icons-png.flaticon.com/512/733/733585.png" },
     { name: "Email", url: "mailto:yuen_lam@mymail.sutd.edu.sg", img: "https://cdn-icons-png.flaticon.com/512/732/732200.png" },
     { name: "LinkedIn", url: "https://linkedin.com/in/lam-yu-en/", img: "https://cdn-icons-png.flaticon.com/512/174/174857.png" },
     { name: "GitHub", url: "https://github.com/samuellam123", img: "https://cdn-icons-png.flaticon.com/512/25/25231.png" },
