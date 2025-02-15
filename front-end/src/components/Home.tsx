@@ -7,7 +7,11 @@ export default function Home() {
     return (
         <>
             <Flex align="center" justify="space-between" style={{
-                justifySelf: 'center', height: '80vh', backgroundColor: 'lightblue', padding: "5% 5% 0% 5%"
+                justifySelf: 'center',
+                height: 'calc(100vh - 200px)',
+                minHeight: '500px',
+                backgroundColor: 'lightblue',
+                padding: "5% 5% 0% 5%",
             }}
             >
                 <Flex gap='large' vertical style={{ maxWidth: '60%' }}>
