@@ -1,7 +1,9 @@
 // import { useState } from 'react';
-import { Anchor, Button, Flex, type AnchorProps } from 'antd';
+import { Anchor, Button, Flex, Grid, Typography, type AnchorProps } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
-import Title from 'antd/es/typography/Title';
+
+const { Title } = Typography;
+const { useBreakpoint } = Grid;
 
 type AnchorItem = Required<AnchorProps>['items'][number];
 
@@ -28,25 +30,37 @@ const items: AnchorItem[] = [
     },]
 
 export default function WebHeader() {
+    const screens = useBreakpoint();
+    const isSmallScreen = !screens.md;
+    const isSmallerScreen = !screens.sm;
+
     return (
         <>
             <Flex align="center" justify='space-between' style={{ height: '100%' }}>
 
-                <a href='/'>
-                    <Title level={4} style={{ backgroundColor: 'white', margin: 0 }}>Personal Portfolio</Title>
-                </a>
+                {/* Hide title on small screens */}
+                {!isSmallScreen && (
+                    <a href='/'>
+                        <Title level={4} style={{ margin: 0, }}>Personal Portfolio</Title>
+                    </a>
+                )}
 
                 <Flex align='center' gap={"large"}>
                     <Anchor
                         direction="horizontal"
                         items={items}
-                        style={{ backgroundColor: 'white' }}
+                        style={{
+                            backgroundColor: 'white', flexWrap: 'nowrap'
+                        }}
                     >
                     </Anchor>
 
-                    <Button iconPosition="end" href="https://tinyurl.com/LamYuEnResume" target="__blank" icon={<DownloadOutlined />}>
-                        Download Resume
-                    </Button>
+                    {/* Hide title on small screens */}
+                    {!isSmallerScreen && (
+                        <Button iconPosition="end" href="https://tinyurl.com/LamYuEnResume" target="__blank" icon={<DownloadOutlined />}>
+                            Download Resume
+                        </Button>
+                    )}
                 </Flex>
             </Flex >
         </>
