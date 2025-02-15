@@ -32,7 +32,9 @@ export default function WebHeader() {
         <>
             <Flex align="center" justify='space-between' style={{ height: '100%' }}>
 
-                <Title level={4} style={{ backgroundColor: 'white', margin: 0 }}>Personal Portfolio</Title>
+                <a href='/'>
+                    <Title level={4} style={{ backgroundColor: 'white', margin: 0 }}>Personal Portfolio</Title>
+                </a>
 
                 <Flex align='center' gap={"large"}>
                     <Anchor
