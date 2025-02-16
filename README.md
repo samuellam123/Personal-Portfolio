@@ -17,11 +17,11 @@ This is my personal coding portfolio website as a Computer Science student, buil
 ## 📎 Contributing
 This is a personal project, but feel free to suggest improvements or report bugs via [GitHub Issues](https://github.com/samuellam123/Personal-Portfolio/issues).
 
-## 📎 Forking
-Feel free to fork this project and create a version of your own portfolio!  
-However, please note:
+## 🍴 Forking Policy
+Feel free to **fork this project** and create your own version of a personal portfolio!  
+However, please note the following:  
 - 🚫 **Not for commercial use** – Only for personal projects or learning purposes.  
-- 📝 **Give proper attribution** if you are sharing your version publicly.  
+- 📝 **Proper Attribution Required** – If you share your version publicly, kindly credit this repository.  
 
 ## 📬 Contact
 You can reach me via:
