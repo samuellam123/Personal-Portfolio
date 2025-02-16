@@ -25,7 +25,8 @@ However, please note the following:
 
 ## 📬 Contact
 You can reach me via:
-- 🌍 [Portfolio Website](https://tinyurl.com/LamYuEnPortfolio)
+- 🌍 [Portfolio Website](https://personal-portfolio-henna-alpha-21.vercel.app/)
+- ✉️ [Mail] (mailto:yuen_lam@mymail.sutd.edu.sg)
 - 💼 [LinkedIn](https://linkedin.com/in/lam-yu-en)
 - 🐙 [GitHub](https://github.com/samuellam123)
 
