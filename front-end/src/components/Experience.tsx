@@ -67,7 +67,7 @@ export default function Experience() {
 
     return (
         <Flex gap={"large"} vertical style={{ backgroundColor: "#f0f0f0", padding: "5% 5% 0% 5%" }}>
-            <Title>My Projects</Title>
+            <Title>My Experience</Title>
             <Text>
                 Here are examples of websites and web applications developed for my clients. Not everything is visible. If you want to see more projects, check my social media profiles.
             </Text>

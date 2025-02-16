@@ -53,7 +53,7 @@ export default function WebHeader() {
                         affix={false} // Prevents fixed positioning interfering with scroll
                         style={{
                             backgroundColor: 'white',
-                            flexWrap: 'nowrap'
+                            flexWrap: 'nowrap',
                         }}
                     >
                     </Anchor>
