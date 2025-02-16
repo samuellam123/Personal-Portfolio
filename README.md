@@ -7,7 +7,7 @@ This is my personal coding portfolio website as a Computer Science student, buil
 - 📂 **Project List & Detail Pages** – Showcasing my work
 - 💼 **Experience List Page** – My work history and skills
 - 📬 **Contact & About Page** – Get in touch with me
-- 🎨 **Responsive & Modern UI** – Built for all devices
+- 🎨 **Responsive & Modern UI** – Built for all devices and screen sizes
 
 ## 🛠️ Tech Stack
 - **Frontend:** React, TypeScript
