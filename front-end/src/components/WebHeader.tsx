@@ -1,6 +1,7 @@
-// import { useState } from 'react';
 import { Anchor, Button, Flex, Grid, Typography, type AnchorProps } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
+
+import { ResumeLink } from '../data/WebHeaderData';
 
 const { Title } = Typography;
 const { useBreakpoint } = Grid;
@@ -49,8 +50,8 @@ export default function WebHeader() {
                     <Anchor
                         direction="horizontal"
                         items={items}
-                        offsetTop={64} // Increased offset for mobile header spacing
-                        affix={false} // Prevents fixed positioning interfering with scroll
+                        offsetTop={64}
+                        affix={false}
                         style={{
                             backgroundColor: 'white',
                             flexWrap: 'nowrap',
@@ -60,7 +61,7 @@ export default function WebHeader() {
 
                     {/* Hide title on small screens */}
                     {!isSmallerScreen && (
-                        <Button iconPosition="end" href="https://tinyurl.com/LamYuEnResume" target="__blank" icon={<DownloadOutlined />}>
+                        <Button iconPosition="end" href={ResumeLink} target="__blank" icon={<DownloadOutlined />}>
                             Download Resume
                         </Button>
                     )}

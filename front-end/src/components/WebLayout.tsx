@@ -1,7 +1,6 @@
 import { Layout } from "antd";
 import WebHeader from "./WebHeader";
 import WebContent from "./WebContent";
-// import WebHeader from "./Header";
 
 const { Header, Content, Footer } = Layout;
 

@@ -11,9 +11,9 @@ interface Experience {
     title: string;
     description: string;
     longer_desc: React.ReactNode;
-    frontend: string;
+    frontend: string[];
     technology?: string[];
-    backend?: string;
+    backend?: string[];
     img?: string;
     github?: string;
 }
@@ -35,8 +35,8 @@ const projectList: Experience[] = [
                 </ul>
             </Paragraph >
         ,
-        frontend: "React",
-        backend: "Node.js",
+        frontend: ["React"],
+        backend: ["Node.js"],
         technology: ['HTML', 'CSS', 'Ruby on Rails', 'Google Cloud'],
         img: dbsWebapp,
         github: "https://github.com/samuellam123/DBS-Doc-Check"
@@ -45,8 +45,8 @@ const projectList: Experience[] = [
         title: "E-Commerce Platform",
         description: "A fully functional e-commerce website with payments integration.",
         longer_desc: "Redesigned the deposit account onboarding process for foreigners to reduce drop-off rates during application submissionsRedesigned the deposit account onboarding process for foreigners to reduce drop-off rates during application submissionsRedesigned the deposit account onboarding process for foreigners to reduce drop-off rates during application submissions.",
-        frontend: "Next.js",
-        backend: "Express.js",
+        frontend: ["Next.js"],
+        backend: ["Express.js"],
         technology: ["MongoDB", "Stripe API"],
         img: dbsWebapp,
     },

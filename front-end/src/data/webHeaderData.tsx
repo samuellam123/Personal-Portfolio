@@ -1,0 +1,1 @@
+export const ResumeLink = "https://tinyurl.com/LamYuEnResume"
