@@ -1,7 +1,7 @@
 import { Anchor, Button, Flex, Grid, Typography, type AnchorProps } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
 
-import { ResumeLink } from '../data/WebHeaderData';
+import { ResumeLink } from '../data/headerData';
 
 const { Title } = Typography;
 const { useBreakpoint } = Grid;
