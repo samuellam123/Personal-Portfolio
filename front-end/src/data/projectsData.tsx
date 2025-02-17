@@ -13,7 +13,7 @@ export interface Project {
     frontend?: string;
     backend?: string;
     technology?: string[];
-    proj_img?: string;
+    img?: string;
     sub_img?: string;
     github?: string;
     live_app?: string;
@@ -38,7 +38,7 @@ export const projectList: Project[] = [
         frontend: "React",
         backend: "Node.js",
         technology: ['HTML', 'CSS', 'Ruby on Rails', 'Google Cloud'],
-        proj_img: dbsWebapp,
+        img: dbsWebapp,
         sub_img: test,
         github: "https://github.com/samuellam123/DBS-Doc-Check",
         live_app: "https://google.com"
@@ -57,7 +57,7 @@ export const projectList: Project[] = [
         </Paragraph>,
         frontend: "React, TypeScript, Vite",
         technology: ["React", "TypeScript", "Vite", "Ant Design"],
-        proj_img: test,
+        img: test,
         github: "https://github.com/samuellam123/Personal-Portfolio"
     },
     {
@@ -75,7 +75,7 @@ export const projectList: Project[] = [
         frontend: "Java, XML",
         backend: "Firebase",
         technology: ["Bluetooth", "Google Firebase", "Android Studio"],
-        proj_img: dbsWebapp,
+        img: dbsWebapp,
         github: "https://github.com/samuellam123/Bluetooth-Controller"
     },
     {
@@ -93,7 +93,7 @@ export const projectList: Project[] = [
         frontend: "ReactJS",
         backend: "None (API Integrated)",
         technology: ["ReactJS", "HTML", "CSS", "JavaScript"],
-        proj_img: dbsWebapp,
+        img: dbsWebapp,
         github: "https://cryptocurrencyswapform.vercel.app",
     },
     {
@@ -110,7 +110,7 @@ export const projectList: Project[] = [
         </Paragraph>,
         frontend: "HTML, CSS, JavaScript",
         technology: ["HTML", "CSS", "JavaScript"],
-        proj_img: dbsWebapp,
+        img: dbsWebapp,
     },
     {
         title: "Personal Project: Cuby",
@@ -126,7 +126,7 @@ export const projectList: Project[] = [
         </Paragraph>,
         frontend: "Unity Engine, C++",
         technology: ["Unity", "C++"],
-        proj_img: dbsWebapp,
+        img: dbsWebapp,
         github: "https://samuellam123.itch.io/cuby"
     }
 ];

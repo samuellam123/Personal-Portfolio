@@ -25,7 +25,7 @@ export default function Projects() {
                         hoverable
                         style={{ width: 400 }}
                         onClick={() => setSelectedProject(project)}
-                        cover={<img alt="project pic" src={project.proj_img} loading="lazy" />}
+                        cover={<img alt="project pic" src={project.img} loading="lazy" style={{ height: "400px", objectFit: 'contain' }} />}
                     >
                         <Meta title={project.title} description={project.description} />
                         <Flex wrap style={{ paddingTop: "24px" }}>
@@ -69,7 +69,7 @@ export default function Projects() {
                             <Flex>
                                 <Image
                                     width={'50%'}
-                                    src={selectedProject.proj_img}
+                                    src={selectedProject.img}
                                     alt={selectedProject.title}
                                 />
                                 {[selectedProject.sub_img && (
