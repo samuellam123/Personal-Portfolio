@@ -58,9 +58,9 @@ export default function Projects() {
                                     View on GitHub
                                 </Button>
                             ),
-                            selectedProject.live_app && (
-                                <Button type="primary" key="github" href={selectedProject.live_app} target="_blank">
-                                    Live App
+                            selectedProject.direct_link && (
+                                <Button type="primary" key="github" href={selectedProject.direct_link.link} target="_blank">
+                                    {selectedProject.direct_link.label}
                                 </Button>
                             ),
                         ]}

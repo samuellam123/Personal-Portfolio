@@ -3,8 +3,7 @@ import { Typography } from "antd";
 const { Paragraph } = Typography
 
 //import project images
-import dbsWebapp from '../assets/images/dbs-webapp.png';
-import test from '../assets/images/test.webp';
+import { imageAssets } from "../data/imageAssets";
 
 export interface Project {
     title: string;
@@ -16,16 +15,16 @@ export interface Project {
     img?: string;
     sub_img?: string;
     github?: string;
-    live_app?: string;
+    direct_link?: { label: string, link: string };
 }
 
 export const projectList: Project[] = [
     {
         title: "DBS Digital Onboarding Web App",
-        description: "Redesigned the deposit account onboarding process for foreigners to reduce drop-off rates during application submissions.",
+        description: "Collborated closely with DBS product team to redesign the deposit account onboarding process for foreigners to reduce drop-off rates during application submissions.",
         longer_desc:
             <Paragraph>
-                Redesigned the deposit account onboarding process for foreigners to reduce drop- off rates during application submissions.
+                Collborated closely with DBS product team to redesign the deposit account onboarding process for foreigners to reduce drop- off rates during application submissions.
                 <ul>
                     <li>Enhanced <b>UI/UX</b> to improve pre-submission guidance and provide multilingual support.</li>
                     <li>Integrated OCR technology to eliminate manual input for required documents.</li>
@@ -38,10 +37,10 @@ export const projectList: Project[] = [
         frontend: "React",
         backend: "Node.js",
         technology: ['HTML', 'CSS', 'Ruby on Rails', 'Google Cloud'],
-        img: dbsWebapp,
-        sub_img: test,
+        img: imageAssets.dbsWebapp,
+        sub_img: imageAssets.test,
         github: "https://github.com/samuellam123/DBS-Doc-Check",
-        live_app: "https://google.com"
+        direct_link: { label: "Project Site", link: "https://sites.google.com/view/next-gen-ai/" }
     },
     {
         title: "Personal Portfolio Website",
@@ -57,7 +56,7 @@ export const projectList: Project[] = [
         </Paragraph>,
         frontend: "React, TypeScript, Vite",
         technology: ["React", "TypeScript", "Vite", "Ant Design"],
-        img: test,
+        img: imageAssets.test,
         github: "https://github.com/samuellam123/Personal-Portfolio"
     },
     {
@@ -75,7 +74,7 @@ export const projectList: Project[] = [
         frontend: "Java, XML",
         backend: "Firebase",
         technology: ["Bluetooth", "Google Firebase", "Android Studio"],
-        img: dbsWebapp,
+        img: imageAssets.dbsWebapp,
         github: "https://github.com/samuellam123/Bluetooth-Controller"
     },
     {
@@ -93,7 +92,7 @@ export const projectList: Project[] = [
         frontend: "ReactJS",
         backend: "None (API Integrated)",
         technology: ["ReactJS", "HTML", "CSS", "JavaScript"],
-        img: dbsWebapp,
+        img: imageAssets.dbsWebapp,
         github: "https://cryptocurrencyswapform.vercel.app",
     },
     {
@@ -110,7 +109,7 @@ export const projectList: Project[] = [
         </Paragraph>,
         frontend: "HTML, CSS, JavaScript",
         technology: ["HTML", "CSS", "JavaScript"],
-        img: dbsWebapp,
+        img: imageAssets.dbsWebapp,
     },
     {
         title: "Personal Project: Cuby",
@@ -126,7 +125,7 @@ export const projectList: Project[] = [
         </Paragraph>,
         frontend: "Unity Engine, C++",
         technology: ["Unity", "C++"],
-        img: dbsWebapp,
+        img: imageAssets.dbsWebapp,
         github: "https://samuellam123.itch.io/cuby"
     }
 ];
