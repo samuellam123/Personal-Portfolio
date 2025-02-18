@@ -10,6 +10,7 @@ This is my personal coding portfolio website as a Computer Science student, buil
 - 🎨 **Responsive & Modern UI** – Built for all devices and screen sizes
 
 ## 🛠️ Tech Stack
+- **Design:** [Figma](https://www.figma.com/design/lKo7srah6sxiHZXBcJe2rV/Personal-Portfolio?node-id=179446-3670&t=ZsR2EcBPj8atuaqi-1) 
 - **Frontend:** React, TypeScript
 - **Styling:** [Ant Design](https://ant.design/)
 - **Deployment:** [Vercel](https://personal-portfolio-henna-alpha-21.vercel.app/)
