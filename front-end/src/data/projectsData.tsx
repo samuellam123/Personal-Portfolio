@@ -1,8 +1,8 @@
 import { Typography } from "antd";
 
-const { Paragraph } = Typography
+const { Paragraph, Title } = Typography
 
-//import project images
+//import all project images
 import { imageAssets } from "../data/imageAssets";
 
 export interface Project {
@@ -11,6 +11,7 @@ export interface Project {
     longer_desc: React.ReactNode;
     frontend?: string;
     backend?: string;
+    otr_tech?: string;
     technology?: string[];
     img?: string;
     sub_img?: string;
@@ -22,42 +23,87 @@ export const projectList: Project[] = [
     {
         title: "DBS Digital Onboarding Web App",
         description: "Collborated closely with DBS product team to redesign the deposit account onboarding process for foreigners to reduce drop-off rates during application submissions.",
-        longer_desc:
+        longer_desc: <>
             <Paragraph>
-                Collborated closely with DBS product team to redesign the deposit account onboarding process for foreigners to reduce drop- off rates during application submissions.
+                As the <b>lead software developer</b>, I took charge of the core development and technical implementation of this project. My key contributions include:
                 <ul>
-                    <li>Enhanced <b>UI/UX</b> to improve pre-submission guidance and provide multilingual support.</li>
-                    <li>Integrated OCR technology to eliminate manual input for required documents.</li>
-                    <li>Led the project using Agile methodology, structured into four sprints, collaborating closely with DBS clients for iterative development.</li>
-                    <li>Developed user personas, storyboards, and user stories to visualize key challenges and solutions.</li>
-                    <li>Utilized RESTful APIs and a microservices architecture to ensure scalability and efficiency.</li>
+                    <li>🚀 <b>Project Setup & Deployment:</b> Established the project framework, managed page routing, and deployed the application on Google Cloud using Docker.</li>
+                    <li>🔒 <b>Authentication Feature:</b> Integrated Twilio OTP services to implement secure user authentication.</li>
+                    <li>⚙️ <b>Database & Application Features:</b> Designed the database structure with SQLite3 and implemented key features, including auto-save and application record retrieval.</li>
+                    <li>💡 <b>UX Optimization:</b> In the final sprint of the project, revamped the entire user flow, reducing the number of clicks from 19 to 13 (a 36% improvement) for a more seamless experience.</li>
+                    <li>📊 <b>UML & Solution Class Diagrams:</b> Designed comprehensive UML diagrams and solution class diagrams to ensure a scalable and efficient system architecture.</li>
                 </ul>
-            </Paragraph >
+            </Paragraph>
+            <Title level={5}>📌 Project Background & Purpose:</Title>
+            <Paragraph>
+                The project aimed to streamline the user experience, reduce submission errors, and improve accessibility through modern features and best practices. Key project highlights include:
+                <ul>
+                    <li>🖥️ <b>UI/UX Enhancements:</b> Improved pre-submission guidance and introduced multilingual support to enhance accessibility.</li>
+                    <li>📸 <b>OCR Integration:</b> Incorporated optical character recognition (OCR) technology to automate document uploads, eliminating manual inputs.</li>
+                    <li>🌀 <b>Agile Development:</b> Led the project using Agile methodology, collaborating with DBS clients in <b>four structured sprints</b> to ensure iterative improvements.</li>
+                    <li>🧠 <b>Design Thinking:</b> Developed user personas, storyboards, and user stories to address pain points and propose practical solutions.</li>
+                    <li>🌐 <b>Scalable Architecture:</b> Utilized RESTful APIs and a microservices architecture to ensure system scalability and efficiency.</li>
+                </ul>
+
+                For more details and a complete project overview, please visit our <b>Project Google Site</b> by clicking the "Project Site" button below.
+            </Paragraph>
+        </>
         ,
-        frontend: "React",
-        backend: "Node.js",
+        frontend: "HTML, CSS, JavaScript",
+        backend: "Ruby on Rails, MySQL3",
+        otr_tech: "Cucumber, Capybara (Code testing)",
         technology: ['HTML', 'CSS', 'Ruby on Rails', 'Google Cloud'],
         img: imageAssets.dbsWebapp,
-        sub_img: imageAssets.test,
+        sub_img: imageAssets.dbsWebapp_ocr,
         github: "https://github.com/samuellam123/DBS-Doc-Check",
         direct_link: { label: "Project Site", link: "https://sites.google.com/view/next-gen-ai/" }
     },
     {
         title: "Personal Portfolio Website",
-        description: "My Interactive Portfolio Showcasing Projects and Skills",
-        longer_desc: <Paragraph>
-            Developed a fully responsive personal portfolio using React, TypeScript, and Ant Design to showcase my projects and achievements.
-            <ul>
-                <li><b>Frontend:</b> Built with React, TypeScript, and Vite for high performance.</li>
-                <li><b>Design:</b> Styled with Ant Design components for a sleek UI.</li>
-                <li><b>Deployment:</b> Hosted on Vercel for seamless access.</li>
-            </ul>
-            <p><b>Technologies:</b> React, TypeScript, Vite, Ant Design</p>
-        </Paragraph>,
-        frontend: "React, TypeScript, Vite",
-        technology: ["React", "TypeScript", "Vite", "Ant Design"],
-        img: imageAssets.test,
-        github: "https://github.com/samuellam123/Personal-Portfolio"
+        description: "A responsive personal portfolio website built with React and TypeScript, showcasing my projects, skills, and experiences in a single-page application.",
+        longer_desc: <>
+            <Paragraph>
+                This is my personal portfolio website, fully designed and developed by me, from the initial <a target="__blank" href="https://www.figma.com/design/lKo7srah6sxiHZXBcJe2rV/Personal-Portfolio?node-id=179446-3670&t=ZsR2EcBPj8atuaqi-1">Figma</a> design to the final implementation using React and TypeScript. The website serves as a showcase of my projects, technical skills, and experiences, built as a single-page application (SPA) with smooth navigation and fast loading times.
+            </Paragraph>
+            <Title level={5}>💡 My Responsibilities:</Title>
+            <Paragraph>
+                <ul>
+                    <li>🎨 <b>UI/UX Design:</b> Designed the entire website using Figma, focusing on a clean and user-friendly interface.</li>
+                    <li>💻 <b>Frontend Development:</b> Coded the entire project using React with TypeScript, utilizing functional components and hooks.</li>
+                    <li>📚 <b>UI Library Integration:</b> Used Ant Design for consistent UI components and a professional appearance.</li>
+                    <li>🛠️ <b>Customizable Data System:</b> Implemented a data-driven structure by separating all content (projects, experiences, and contact info) into a dedicated <b>`data/`</b> directory.</li>
+                    <li>📂 <b>CSV Data Integration (In Progress):</b> Planned to support reading page content from a CSV file for easier content updates.</li>
+                    <li>☁️ <b>Deployment:</b> Deployed the site on <b>Vercel</b> with automatic CI/CD for easy updates.</li>
+                </ul>
+            </Paragraph>
+
+            <Title level={5}>🚧 Challenges Faced & Solutions:</Title>
+
+            <Paragraph>
+                <ul>
+                    <li>💡 <b>Open Source Customization:</b> Since I wanted the GitHub repository to be public and forkable, I had to ensure users could easily customize the portfolio for their use. I achieved this by storing all page content in a <b>`data/`</b> directory, separating logic from content.</li>
+                    <li>📂 <b>Content Management:</b> To make editing content even more user-friendly, I planned a system to read portfolio data from a CSV file, enabling non-developers to update information easily.</li>
+                </ul>
+            </Paragraph>
+
+            <Title level={5}>🎯 Project Purpose & Goals:</Title>
+
+            <Paragraph>
+                <ul>
+                    <li>👔 <b>For Recruiters:</b> To showcase all my projects, experiences, and skills in one place, making it easy for recruiters to review my work.</li>
+                    <li>🌐 <b>For Developers:</b> To provide an open-source template on GitHub for anyone wanting to create their own portfolio by forking my repository.</li>
+                </ul>
+
+                Visit GitHub for more details, or click the <b>Live App</b> button below to explore the deployed website.
+            </Paragraph>
+        </>
+        ,
+        frontend: "React Vite, TypeScript, Ant Design (UI Library)",
+        otr_tech: "Deployed on Vercel",
+        technology: ["React", "TypeScript", "Vite", "Ant Design", 'Vercel'],
+        img: imageAssets.portfolio,
+        github: "https://github.com/samuellam123/Personal-Portfolio",
+        direct_link: { label: "Live App", link: "https://personal-portfolio-henna-alpha-21.vercel.app/" }
     },
     {
         title: "Mobile Bluetooth Gaming Controller",

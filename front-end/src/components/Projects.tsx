@@ -25,7 +25,7 @@ export default function Projects() {
                         hoverable
                         style={{ width: 400 }}
                         onClick={() => setSelectedProject(project)}
-                        cover={<img alt="project pic" src={project.img} loading="lazy" style={{ height: "400px", objectFit: 'contain' }} />}
+                        cover={<img alt="project pic" src={project.img} loading="lazy" style={{ height: "400px", objectFit: 'contain', padding: '5%' }} />}
                     >
                         <Meta title={project.title} description={project.description} />
                         <Flex wrap style={{ paddingTop: "24px" }}>
@@ -80,10 +80,10 @@ export default function Projects() {
                                     />)]}
                             </Flex>
 
-                            <Title level={4}>Description</Title>
+                            <Title level={5}>📝 Project Overview</Title>
                             <p>{selectedProject.longer_desc}</p>
 
-                            <Title level={4}>Technology Stack</Title>
+                            <Title level={5} style={{ margin: 0 }}>🛠️ Technology Stack</Title>
                             {[selectedProject.frontend && (
                                 <Flex align="center" gap={"small"}>
                                     <Text><b>Frontend:</b> {selectedProject.frontend}</Text>
@@ -93,6 +93,12 @@ export default function Projects() {
                             {[selectedProject.backend && (
                                 <Flex align="center" gap={"small"}>
                                     <Text><b>Backend:</b> {selectedProject.backend}</Text>
+                                </Flex>
+                            )]}
+
+                            {[selectedProject.otr_tech && (
+                                <Flex align="center" gap={"small"}>
+                                    <Text><b>Others:</b> {selectedProject.otr_tech}</Text>
                                 </Flex>
                             )]}
 
