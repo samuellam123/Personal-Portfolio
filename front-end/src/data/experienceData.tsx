@@ -1,34 +1,44 @@
 import { Typography } from "antd";
 
-const { Paragraph } = Typography
+const { Title } = Typography
+
+//import all project images
+import { imageAssets } from "../data/imageAssets";
 
 export interface Experience {
     title: string;
+    company: string;
+    period: string;
+    location: string;
     description: string;
     longer_desc: React.ReactNode;
-    frontend: string;
-    backend?: string;
+    responsibilities: string[];
+    key_achievements: string[];
     technology?: string[];
     img?: string;
     sub_img?: string;
-    link?: string;
+    direct_link?: { label: string, link: string };
 }
 
 export const experienceList: Experience[] = [
     {
-        title: "Personal Portfolio Website",
-        description: "My Interactive Portfolio Showcasing Projects and Skills",
-        longer_desc: <Paragraph>
-            Developed a fully responsive personal portfolio using React, TypeScript, and Ant Design to showcase my projects and achievements.
-            <ul>
-                <li><b>Frontend:</b> Built with React, TypeScript, and Vite for high performance.</li>
-                <li><b>Design:</b> Styled with Ant Design components for a sleek UI.</li>
-                <li><b>Deployment:</b> Hosted on Vercel for seamless access.</li>
-            </ul>
-            <p><b>Technologies:</b> React, TypeScript, Vite, Ant Design</p>
-        </Paragraph>,
-        frontend: "React, TypeScript, Vite",
-        technology: ["React", "TypeScript", "Vite", "Ant Design"],
-        link: "https://link.com/samuellam123/Personal-Portfolio"
-    },
+        title: "Product Designer at GIC",
+        company: "GIC",
+        period: "May 2024 - Sep 2024",
+        location: "Singapore",
+        description: "Worked as a Product Designer Intern in the Business Process Services (BPS) department, contributing to GIC’s internal design system and enhancing UX standards.",
+        longer_desc: <>hihi</>,
+        responsibilities: [
+            "Designed high-fidelity prototypes for components such as Anchor, Alert, and Search in Figma.",
+            "Collaborated with developers and introduced design standards into the internal design system.",
+            "Led user research and collected feedback to refine component usability.",
+        ],
+        key_achievements: [
+            "Integrated 3 new components into GIC’s internal design system.",
+            "Presented designs at weekly stand-ups and received approval from senior designers.",
+        ],
+        technology: ["Figma", "Design Systems", "Prototyping"],
+        img: imageAssets.portfolio,
+        direct_link: { label: "asdasd", link: "https://google.com" }
+    }
 ];

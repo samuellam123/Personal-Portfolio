@@ -1,6 +1,6 @@
 import { Typography } from "antd";
 
-const { Paragraph, Title } = Typography
+const { Title } = Typography
 
 //import all project images
 import { imageAssets } from "../data/imageAssets";

@@ -2,47 +2,44 @@ import { Flex, Typography, Card, Tag, Divider, Modal, Image, Button } from "antd
 import { useState } from 'react';
 import { experienceList, Experience } from "../data/experienceData";
 
-import { contactLinks } from "../data/aboutData";
-
 const { Title, Text } = Typography
 const { Meta } = Card;
 
-const LinkedIn = contactLinks[2].url
-
-export default function Projects() {
-    const [selectedProject, setSelectedProject] = useState<Experience | null>(null);
+export default function experiences() {
+    const [selectedExp, setselectedExp] = useState<Experience | null>(null);
 
     return (
         <Flex gap={"large"} vertical style={{ backgroundColor: "#f0f0f0", padding: "5% 5% 0% 5%" }}>
-            <Title>My Projects</Title>
+            <Title>My Experience</Title>
             <Text>
-                Explore my collection of websites and applications that I have developed. More projects are available on my <a style={{ color: 'darkblue' }} target="__blank" href={LinkedIn}>LinkedIn profiles</a> — follow along for updates and insights!</Text>
+                A journey through gaming support, entrepreneurship, and product design - building strong foundations in problem-solving, coding, and digital product development.
+            </Text>
 
             <Flex wrap gap={"large"}>
-                {experienceList.map((project, index) => (
+                {experienceList.map((experience, index) => (
                     <Card
                         key={index}
                         hoverable
                         style={{ width: 400 }}
-                        onClick={() => setSelectedProject(project)}
-                        cover={<img alt="project pic" src={project.img} loading="lazy" style={{ height: "400px", objectFit: 'contain' }} />}
+                        onClick={() => setselectedExp(experience)}
+                        cover={<img alt="experience pic" src={experience.img} loading="lazy" style={{ height: "400px", objectFit: 'contain', padding: '5%' }} />}
                     >
-                        <Meta title={project.title} description={project.description} />
+                        <Meta title={experience.title} description={experience.description} />
                         <Flex wrap style={{ paddingTop: "24px" }}>
-                            {project.technology && project.technology.map((tag) =>
+                            {experience.technology && experience.technology.map((tag) =>
                                 <Tag>{tag}</Tag>
                             )}
                         </Flex>
                     </Card>
                 ))}
 
-                {/* Modal for project details */}
-                {selectedProject && (
+                {/* Modal for experience details */}
+                {selectedExp && (
                     <Modal
-                        title={selectedProject.title}
+                        title={selectedExp.title}
                         centered
-                        open={!!selectedProject}
-                        onCancel={() => setSelectedProject(null)}
+                        open={!!selectedExp}
+                        onCancel={() => setselectedExp(null)}
                         height={"80%"}
                         width={{
                             xs: '90%',
@@ -53,46 +50,44 @@ export default function Projects() {
                             xxl: '40%',
                         }}
                         footer={[
-                            selectedProject.link && (
-                                <Button key="link" href={selectedProject.link} target="_blank">
-                                    View on link
+                            selectedExp.direct_link && (
+                                <Button type="primary" key="link" href={selectedExp.direct_link.link} target="_blank">
+                                    {selectedExp.direct_link.label}
                                 </Button>
                             ),
                         ]}
                     >
                         <Flex vertical>
-                            <Flex>
+                            <Flex justify="center" style={{ padding: '5% 0%' }}>
                                 <Image
                                     width={'50%'}
-                                    src={selectedProject.img}
-                                    alt={selectedProject.title}
+                                    src={selectedExp.img}
+                                    alt={selectedExp.title}
                                 />
-                                {[selectedProject.sub_img && (
+                                {[selectedExp.sub_img && (
                                     <Image
                                         width={'50%'}
-                                        src={selectedProject.sub_img}
-                                        alt={selectedProject.title}
+                                        src={selectedExp.sub_img}
+                                        alt={selectedExp.title}
                                     />)]}
                             </Flex>
 
-                            <Title level={4}>Description</Title>
-                            <p>{selectedProject.longer_desc}</p>
+                            <Flex align="center" gap={"small"}>
+                                <Text><b>Frontend:</b> {selectedExp.period}</Text>
+                            </Flex>
 
-                            <Title level={4}>Technology Stack</Title>
-                            {[selectedProject.frontend && (
-                                <Flex align="center" gap={"small"}>
-                                    <Text><b>Frontend:</b> {selectedProject.frontend}</Text>
-                                </Flex>
-                            )]}
+                            <Title level={4}>📝 Experience Overview</Title>
+                            <p>{selectedExp.longer_desc}</p>
 
-                            {[selectedProject.backend && (
+                            <Title level={5} style={{ margin: 0 }}>🛠️ Technology Stack</Title>
+                            {[selectedExp.period && (
                                 <Flex align="center" gap={"small"}>
-                                    <Text><b>Backend:</b> {selectedProject.backend}</Text>
+                                    <Text><b>Frontend:</b> {selectedExp.period}</Text>
                                 </Flex>
                             )]}
 
                             <Flex wrap style={{ paddingTop: "24px" }}>
-                                {selectedProject.technology && selectedProject.technology.map((tag) =>
+                                {selectedExp.technology && selectedExp.technology.map((tag) =>
                                     <Tag>{tag}</Tag>
                                 )}
                             </Flex>
