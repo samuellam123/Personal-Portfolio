@@ -1,6 +1,9 @@
-export const imageAssets: Record<string, string> = {
-    dbsWebapp: require("../assets/images/dbs-webapp.gif"),
-    portfolio: require("../assets/images/portfolio.png"),
-    test: require("../assets/images/test.webp"),
+import dbsWebapp from "../assets/images/dbs_webapp.gif";
+import dbsWebapp_ocr from "../assets/images/dbs_webapp_ocr.gif";
+import test from "../assets/images/test.webp"
 
+export const imageAssets: Record<string, string> = {
+    dbsWebapp,
+    dbsWebapp_ocr,
+    test,
 };

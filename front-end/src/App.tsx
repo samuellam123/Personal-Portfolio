@@ -3,9 +3,7 @@ import WebLayout from "./components/WebLayout"
 
 function App() {
   return (
-    <>
-      <WebLayout />
-    </>
+    <WebLayout />
   )
 }
 

@@ -30,7 +30,7 @@ export default function Projects() {
                         <Meta title={project.title} description={project.description} />
                         <Flex wrap style={{ paddingTop: "24px" }}>
                             {project.technology && project.technology.map((tag) =>
-                                <Tag>{tag}</Tag>
+                                (<Tag>{tag}</Tag>)
                             )}
                         </Flex>
                     </Card>
