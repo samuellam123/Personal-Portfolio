@@ -1,11 +1,27 @@
 import dbsWebapp from "../assets/images/dbs_webapp.gif";
 import dbsWebapp_ocr from "../assets/images/dbs_webapp_ocr.gif";
 import portfolio from "../assets/images/portfolio.png";
-import test from "../assets/images/test.webp"
+import playem from "../assets/images/playem.png";
+import playem_display from "../assets/images/playem_display.png";
+import crypto_swap from "../assets/images/crypto_swap.png";
+import cook4good from "../assets/images/cook4good.png";
+import cuby1 from "../assets/images/cuby1.png";
+import cuby2 from "../assets/images/cuby2.png";
+
+
+
+import test from "../assets/images/test.webp";
 
 export const imageAssets: Record<string, string> = {
     dbsWebapp,
     dbsWebapp_ocr,
     portfolio,
+    playem,
+    playem_display,
+    crypto_swap,
+    cook4good,
+    cuby1,
+    cuby2,
+
     test,
 };

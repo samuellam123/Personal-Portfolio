@@ -66,7 +66,7 @@ export default function Projects() {
                         ]}
                     >
                         <Flex vertical>
-                            <Flex>
+                            <Flex justify="center" style={{ padding: '5% 0%' }}>
                                 <Image
                                     width={'50%'}
                                     src={selectedProject.img}
