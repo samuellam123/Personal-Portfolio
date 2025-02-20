@@ -5,7 +5,7 @@ import { experienceList, Experience } from "../data/experienceData";
 const { Title, Text } = Typography
 const { Meta } = Card;
 
-export default function experiences() {
+export default function Experiences() {
     const [selectedExp, setselectedExp] = useState<Experience | null>(null);
 
     return (
@@ -50,6 +50,11 @@ export default function experiences() {
                             xxl: '40%',
                         }}
                         footer={[
+                            selectedExp.sub_link && (
+                                <Button key="link" href={selectedExp.sub_link.link} target="_blank">
+                                    {selectedExp.sub_link.label}
+                                </Button>
+                            ),
                             selectedExp.direct_link && (
                                 <Button type="primary" key="link" href={selectedExp.direct_link.link} target="_blank">
                                     {selectedExp.direct_link.label}
@@ -64,31 +69,41 @@ export default function experiences() {
                                     src={selectedExp.img}
                                     alt={selectedExp.title}
                                 />
-                                {[selectedExp.sub_img && (
+                                {selectedExp.sub_img && (
                                     <Image
                                         width={'50%'}
                                         src={selectedExp.sub_img}
                                         alt={selectedExp.title}
-                                    />)]}
+                                    />)}
                             </Flex>
 
-                            <Flex align="center" gap={"small"}>
-                                <Text><b>Frontend:</b> {selectedExp.period}</Text>
-                            </Flex>
+                            <Title level={5}>📝 Experience Overview</Title>
+                            <Text><b>Period:</b> {selectedExp.period}</Text>
+                            <Text><b>Location:</b> {selectedExp.location}</Text>
 
-                            <Title level={4}>📝 Experience Overview</Title>
-                            <p>{selectedExp.longer_desc}</p>
+                            {selectedExp.longer_desc}
 
-                            <Title level={5} style={{ margin: 0 }}>🛠️ Technology Stack</Title>
-                            {[selectedExp.period && (
-                                <Flex align="center" gap={"small"}>
-                                    <Text><b>Frontend:</b> {selectedExp.period}</Text>
-                                </Flex>
-                            )]}
+                            {selectedExp.responsibilities && (<>
+                                <Title level={5} style={{ margin: 0 }}>💡 Key Responsibilities</Title><ul>
+                                    {selectedExp.responsibilities.map((responsibility, index) => (
+                                        <li key={index}>{responsibility}</li>
+                                    ))}
+                                </ul>
+                            </>
+                            )}
+
+                            {selectedExp.key_achievements && (<>
+                                <Title level={5} style={{ margin: 0 }}>🏆 Key Achivements</Title><ul>
+                                    {selectedExp.key_achievements.map((key_achievement, index) => (
+                                        <li key={index}>{key_achievement}</li>
+                                    ))}
+                                </ul>
+                            </>
+                            )}
 
                             <Flex wrap style={{ paddingTop: "24px" }}>
-                                {selectedExp.technology && selectedExp.technology.map((tag) =>
-                                    <Tag>{tag}</Tag>
+                                {selectedExp.technology && selectedExp.technology.map((tag, index) =>
+                                    <Tag key={index}>{tag}</Tag>
                                 )}
                             </Flex>
 
