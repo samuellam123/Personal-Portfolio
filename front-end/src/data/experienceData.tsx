@@ -46,10 +46,9 @@ export const experienceList: Experience[] = [
         technology: ["Figma", "Design System", "Vitest",],
         direct_link: { label: "Recommendation Letter", link: "https://drive.google.com/file/d/1wbFC2lbAWlQs3jYJxg-wdmVc7OcSoq0m/view?usp=sharing" },
         img: imageAssets.gic,
-    }
-    ,
+    },
     {
-        title: "Co-founder at ObstaX",
+        title: "Co-founder & Software Developer at ObstaX",
         period: "April 2023 - Present (~2 years)",
         location: "SUTD, Singapore",
         description: "Co-founded ObstaX, leading business operations, product development, and funding efforts to create smart glasses and wristbands that enhance navigation for blind and visually impaired users.",
