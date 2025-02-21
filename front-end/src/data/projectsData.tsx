@@ -17,6 +17,7 @@ export interface Project {
     sub_img?: string;
     github?: string;
     direct_link?: { label: string, link: string };
+    ongoing?: boolean;
 }
 
 export const projectList: Project[] = [
@@ -211,5 +212,31 @@ export const projectList: Project[] = [
         img: imageAssets.cuby2,
         sub_img: imageAssets.cuby1,
         direct_link: { label: "Live Game", link: "https://samuellam123.itch.io/cuby" }
-    }
+    },
+    {
+        title: "ObstaX: Landing Page",
+        description: "A responsive landing page built with the MERN stack and Tailwind CSS to showcase ObstaX’s product, user testimonials, FAQs, and pre-order functionality.",
+        longer_desc: <>
+            ObstaX Landing Page is a web-based platform designed to showcase our product, share user testimonials, address FAQs, and enable pre-orders.
+            Built with the MERN stack and styled using Tailwind CSS, the site ensures a fast, responsive, and seamless user experience.
+
+            <Title level={5}>💡 Key Features:</Title>
+            <ul>
+                <li>🖥️ <b>Product Showcase:</b> Provides detailed information about ObstaX's assistive technology solutions.</li>
+                <li>⭐ <b>User Testimonials:</b> Highlights feedback from early adopters, increasing credibility and trust.</li>
+                <li>❓ <b>FAQs Section:</b> Addresses common questions about the product, features, and usage.</li>
+                <li>📞 <b>Contact Us:</b> Includes a contact form for inquiries and partnership opportunities.</li>
+                <li>🛒 <b>Pre-Order Functionality:</b> Enables users to place pre-orders, gathering early interest and market demand.</li>
+                <li>⚡ <b>Performance & Responsiveness:</b> Optimized for both desktop and mobile using Tailwind CSS.</li>
+            </ul>
+
+            🔗 Stay tuned for updates by following our <b>ObstaX LinkedIn page</b> using the button below!
+        </>,
+        frontend: "ReactTSX, Tailwind CSS (UI Library)",
+        backend: "Express, Node.js, MongoDB",
+        technology: ["MongoDB", "Express.js", "ReactTSX", "Node.js"],
+        img: imageAssets.obstaxlandingpage,
+        direct_link: { label: "LinkedIn Page", link: "https://www.linkedin.com/company/obstax/" },
+        ongoing: true,
+    },
 ];

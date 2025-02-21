@@ -1,4 +1,4 @@
-import { Flex, Typography, Card, Tag, Divider, Modal, Image, Button } from "antd";
+import { Flex, Typography, Card, Tag, Divider, Modal, Image, Button, Badge } from "antd";
 import { useState } from 'react';
 import { projectList, Project } from "../data/projectsData";
 
@@ -20,20 +20,38 @@ export default function Projects() {
 
             <Flex wrap gap={"large"}>
                 {projectList.map((project, index) => (
-                    <Card
-                        key={index}
-                        hoverable
-                        style={{ width: 400 }}
-                        onClick={() => setSelectedProject(project)}
-                        cover={<img alt="project pic" src={project.img} loading="lazy" style={{ height: "400px", objectFit: 'contain', padding: '5%' }} />}
-                    >
-                        <Meta title={project.title} description={project.description} />
-                        <Flex wrap style={{ paddingTop: "24px" }}>
-                            {project.technology && project.technology.map((tag) =>
-                                (<Tag>{tag}</Tag>)
-                            )}
-                        </Flex>
-                    </Card>
+                    project.ongoing ? (
+                        <Badge.Ribbon key={index} text="Developing" color="blue">
+                            <Card
+                                hoverable
+                                style={{ width: 400 }}
+                                onClick={() => setSelectedProject(project)}
+                                cover={<img alt="project pic" src={project.img} loading="lazy" style={{ height: "400px", objectFit: 'contain', padding: '5%' }} />}
+                            >
+                                <Meta title={project.title} description={project.description} />
+                                <Flex wrap style={{ paddingTop: "24px" }}>
+                                    {project.technology && project.technology.map((tag, index) =>
+                                        (<Tag key={index}>{tag}</Tag>)
+                                    )}
+                                </Flex>
+                            </Card>
+                        </Badge.Ribbon>
+                    ) : (
+                        <Card
+                            key={index}
+                            hoverable
+                            style={{ width: 400 }}
+                            onClick={() => setSelectedProject(project)}
+                            cover={<img alt="project pic" src={project.img} loading="lazy" style={{ height: "400px", objectFit: 'contain', padding: '5%' }} />}
+                        >
+                            <Meta title={project.title} description={project.description} />
+                            <Flex wrap style={{ paddingTop: "24px" }}>
+                                {project.technology && project.technology.map((tag, index) =>
+                                    (<Tag key={index}>{tag}</Tag>)
+                                )}
+                            </Flex>
+                        </Card>
+                    )
                 ))}
 
                 {/* Modal for project details */}

@@ -13,7 +13,7 @@ import obstax from "../assets/images/obstax.jpg";
 import ta from "../assets/images/ta.jpg";
 import fortnite from "../assets/images/fortnite.png";
 import epicgames from "../assets/images/epic games.png";
-
+import obstaxlandingpage from "../assets/images/obstaxlandingpage.png";
 
 
 export const imageAssets: Record<string, string> = {
@@ -32,4 +32,5 @@ export const imageAssets: Record<string, string> = {
     ta,
     epicgames,
     fortnite,
+    obstaxlandingpage
 };
