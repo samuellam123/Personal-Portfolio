@@ -215,10 +215,10 @@ export const projectList: Project[] = [
     },
     {
         title: "ObstaX: Landing Page",
-        description: "A responsive landing page built with the MERN stack and Tailwind CSS to showcase ObstaX’s product, user testimonials, FAQs, and pre-order functionality.",
+        description: "A responsive landing page built with Next.js and Tailwind CSS to showcase ObstaX's product, user testimonials, FAQs, and collect pre-orders.",
         longer_desc: <>
             ObstaX Landing Page is a web-based platform designed to showcase our product, share user testimonials, address FAQs, and enable pre-orders.
-            Built with the MERN stack and styled using Tailwind CSS, the site ensures a fast, responsive, and seamless user experience.
+            Built with the Next.js with React.js and styled using Tailwind CSS, the site ensures a fast, responsive, and seamless user experience.
 
             <Title level={5}>💡 Key Features:</Title>
             <ul>
@@ -234,9 +234,10 @@ export const projectList: Project[] = [
         </>,
         frontend: "ReactTSX, Tailwind CSS (UI Library)",
         backend: "Express, Node.js, MongoDB",
-        technology: ["MongoDB", "Express.js", "ReactTSX", "Node.js"],
+        technology: ["ReactTSX", "Next.js"],
         img: imageAssets.obstaxlandingpage,
-        direct_link: { label: "LinkedIn Page", link: "https://www.linkedin.com/company/obstax/" },
+
+        direct_link: { label: "Figma Design", link: "https://www.figma.com/design/hO9DrZ6TXmS8oUadvYuktB/ObstaX-Landing-Page-(Tailwind-CSS)?node-id=7527-1206&t=eQNyjQOdDrQvAwmI-1" },
         ongoing: true,
     },
 ];
