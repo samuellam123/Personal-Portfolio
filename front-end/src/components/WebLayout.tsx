@@ -1,7 +1,7 @@
 import { Layout } from "antd";
 import WebHeader from "./WebHeader";
 import WebContent from "./WebContent";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const { Header, Content, Footer } = Layout;
 
