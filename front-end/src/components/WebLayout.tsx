@@ -1,6 +1,9 @@
+'use client';
+
 import { Layout } from "antd";
-import WebHeader from "./WebHeader";
+
 import WebContent from "./WebContent";
+import WebHeader from "./WebHeader";
 
 const { Header, Content, Footer } = Layout;
 
@@ -27,7 +30,7 @@ export default function WebLayout() {
                     <WebContent />
                 </Content>
 
-                <Footer>© 2025 Samuel Lam. All rights reserved. Built with React & TypeScript. Deployed on Vercel.
+                <Footer>© 2025 Samuel Lam. All rights reserved. Built with Next.js & TypeScript. Deployed on Vercel.
                 </Footer>
             </Layout >
         </>

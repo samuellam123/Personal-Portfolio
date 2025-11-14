@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { Typography } from "antd";
 
 const { Title } = Typography
@@ -8,7 +10,7 @@ import { imageAssets } from "../data/imageAssets";
 export interface Project {
     title: string;
     description: string;
-    longer_desc: React.ReactNode;
+    longer_desc: ReactNode;
     frontend?: string;
     backend?: string;
     otr_tech?: string;

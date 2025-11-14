@@ -1,4 +1,5 @@
-//import all project images
+import type { ReactNode } from "react";
+
 import { imageAssets } from "../data/imageAssets";
 
 export interface Experience {
@@ -6,7 +7,7 @@ export interface Experience {
     period: string;
     location: string;
     description: string;
-    longer_desc: React.ReactNode;
+    longer_desc: ReactNode;
     responsibilities: string[];
     key_achievements: string[];
     technology?: string[];

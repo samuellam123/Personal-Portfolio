@@ -1,12 +1,27 @@
-import { Flex, Typography, Card, Tag, Divider, Modal, Image, Button } from "antd";
-import { useState } from 'react';
-import { experienceList, Experience } from "../data/experienceData";
+'use client';
 
-const { Title, Text } = Typography
+import { useState } from 'react';
+
+import { Button, Card, Divider, Flex, Grid, Image, Modal, Tag, Typography } from "antd";
+
+import { experienceList, type Experience } from "../data/experienceData";
+
+const { Title, Text } = Typography;
 const { Meta } = Card;
+const { useBreakpoint } = Grid;
 
 export default function Experiences() {
-    const [selectedExp, setselectedExp] = useState<Experience | null>(null);
+    const [selectedExp, setSelectedExp] = useState<Experience | null>(null);
+    const screens = useBreakpoint();
+
+    const modalWidth = (() => {
+        if (screens?.xxl) return '40%';
+        if (screens?.xl) return '50%';
+        if (screens?.lg) return '70%';
+        if (screens?.md) return '80%';
+        if (screens?.sm) return '80%';
+        return '90%';
+    })();
 
     return (
         <Flex gap={"large"} vertical style={{ backgroundColor: "#f0f0f0", padding: "5% 5% 0% 5%" }}>
@@ -16,19 +31,27 @@ export default function Experiences() {
             </Text>
 
             <Flex wrap gap={"large"}>
-                {experienceList.map((experience, index) => (
+                {experienceList.map((experience) => (
                     <Card
-                        key={index}
+                        key={experience.title}
                         hoverable
                         style={{ width: 400 }}
-                        onClick={() => setselectedExp(experience)}
-                        cover={<img alt="experience pic" src={experience.img} loading="lazy" style={{ height: "400px", objectFit: 'contain', padding: '5%' }} />}
+                        onClick={() => setSelectedExp(experience)}
+                        cover={
+                            <Image
+                                alt={`${experience.title} visual`}
+                                src={experience.img}
+                                loading="lazy"
+                                style={{ height: "400px", objectFit: 'contain', padding: '5%' }}
+                                preview={false}
+                            />
+                        }
                     >
                         <Meta title={experience.title} description={experience.description} />
-                        <Flex wrap style={{ paddingTop: "24px" }}>
-                            {experience.technology && experience.technology.map((tag) =>
-                                <Tag>{tag}</Tag>
-                            )}
+                        <Flex wrap style={{ paddingTop: "24px" }} gap="small">
+                            {experience.technology?.map((tag) => (
+                                <Tag key={`${experience.title}-${tag}`}>{tag}</Tag>
+                            ))}
                         </Flex>
                     </Card>
                 ))}
@@ -39,28 +62,21 @@ export default function Experiences() {
                         title={selectedExp.title}
                         centered
                         open={!!selectedExp}
-                        onCancel={() => setselectedExp(null)}
+                        onCancel={() => setSelectedExp(null)}
                         height={"80%"}
-                        width={{
-                            xs: '90%',
-                            sm: '80%',
-                            md: '80%',
-                            lg: '70%',
-                            xl: '50%',
-                            xxl: '40%',
-                        }}
+                        width={modalWidth}
                         footer={[
                             selectedExp.sub_link && (
-                                <Button key="link" href={selectedExp.sub_link.link} target="_blank">
+                                <Button key="supporting-link" href={selectedExp.sub_link.link} target="_blank" rel="noreferrer">
                                     {selectedExp.sub_link.label}
                                 </Button>
                             ),
                             selectedExp.direct_link && (
-                                <Button type="primary" key="link" href={selectedExp.direct_link.link} target="_blank">
+                                <Button type="primary" key="primary-link" href={selectedExp.direct_link.link} target="_blank" rel="noreferrer">
                                     {selectedExp.direct_link.label}
                                 </Button>
                             ),
-                        ]}
+                        ].filter(Boolean)}
                     >
                         <Flex vertical>
                             <Flex justify="center" style={{ padding: '5% 0%' }}>
@@ -83,28 +99,32 @@ export default function Experiences() {
 
                             {selectedExp.longer_desc}
 
-                            {selectedExp.responsibilities && (<>
-                                <Title level={5} style={{ margin: 0 }}>💡 Key Responsibilities</Title><ul>
-                                    {selectedExp.responsibilities.map((responsibility, index) => (
-                                        <li key={index}>{responsibility}</li>
-                                    ))}
-                                </ul>
-                            </>
+                            {selectedExp.responsibilities && (
+                                <>
+                                    <Title level={5} style={{ margin: 0 }}>💡 Key Responsibilities</Title>
+                                    <ul>
+                                        {selectedExp.responsibilities.map((responsibility) => (
+                                            <li key={responsibility}>{responsibility}</li>
+                                        ))}
+                                    </ul>
+                                </>
                             )}
 
-                            {selectedExp.key_achievements && (<>
-                                <Title level={5} style={{ margin: 0 }}>🏆 Key Achivements</Title><ul>
-                                    {selectedExp.key_achievements.map((key_achievement, index) => (
-                                        <li key={index}>{key_achievement}</li>
-                                    ))}
-                                </ul>
-                            </>
+                            {selectedExp.key_achievements && (
+                                <>
+                                    <Title level={5} style={{ margin: 0 }}>🏆 Key Achievements</Title>
+                                    <ul>
+                                        {selectedExp.key_achievements.map((keyAchievement) => (
+                                            <li key={keyAchievement}>{keyAchievement}</li>
+                                        ))}
+                                    </ul>
+                                </>
                             )}
 
-                            <Flex wrap style={{ paddingTop: "24px" }}>
-                                {selectedExp.technology && selectedExp.technology.map((tag, index) =>
-                                    <Tag key={index}>{tag}</Tag>
-                                )}
+                            <Flex wrap style={{ paddingTop: "24px" }} gap="small">
+                                {selectedExp.technology?.map((tag) => (
+                                    <Tag key={`${selectedExp.title}-${tag}`}>{tag}</Tag>
+                                ))}
                             </Flex>
 
                         </Flex>

@@ -1,5 +1,7 @@
-import { Anchor, Button, Flex, Grid, Typography, type AnchorProps } from 'antd';
+'use client';
+
 import { DownloadOutlined } from '@ant-design/icons';
+import { Anchor, Button, Flex, Grid, Typography, type AnchorProps } from 'antd';
 
 import { ResumeLink } from '../data/headerData';
 
@@ -61,7 +63,13 @@ export default function WebHeader() {
 
                     {/* Hide title on small screens */}
                     {!isSmallerScreen && (
-                        <Button iconPosition="end" href={ResumeLink} target="__blank" icon={<DownloadOutlined />}>
+                        <Button
+                            iconPosition="end"
+                            href={ResumeLink}
+                            target="_blank"
+                            rel="noreferrer"
+                            icon={<DownloadOutlined />}
+                        >
                             Download Resume
                         </Button>
                     )}

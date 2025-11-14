@@ -1,5 +1,8 @@
+'use client';
+
 import { Flex, Image, Timeline, Tooltip, Typography, } from "antd";
-import { skills, contactLinks, timelineItems } from "../data/aboutData";
+
+import { contactLinks, skills, timelineItems } from "../data/aboutData";
 
 const { Title } = Typography
 

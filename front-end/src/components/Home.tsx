@@ -1,5 +1,7 @@
-import { Button, Flex, Typography, Image } from "antd";
+'use client';
+
 import { DownOutlined } from '@ant-design/icons';
+import { Button, Flex, Image, Typography } from "antd";
 import HomeText from "../data/homeData";
 import { profilepic, name } from "../data/homeData";
 
@@ -24,6 +26,7 @@ export default function Home() {
                 <Image
                     width={'30%'}
                     src={profilepic}
+                    alt={name}
                 />
             </Flex>
 

@@ -1,8 +1,11 @@
+'use client';
+
 import { Flex } from "antd";
+
+import About from "./About";
+import Experience from "./Experience";
 import Home from "./Home";
 import Projects from "./Projects";
-import Experience from "./Experience";
-import About from "./About";
 
 export default function WebContent() {
     return (
