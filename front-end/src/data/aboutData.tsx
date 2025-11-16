@@ -5,21 +5,35 @@ const fintech_link = "https://www.sutd.edu.sg/istd/education/undergraduate/speci
 
 const { Title } = Typography;
 
-// Education Timeline Item
+// Education Timeline Item (used in About timeline)
 export const timelineItems = [
     {
         children: (
             <>
                 <Title level={5}>Singapore University of Technology and Design (SUTD)</Title>
                 <p>Computer Science and Design (CSD), Specialising in <a target="__blank" href={fintech_link}>FinTech</a> (in progress)</p>
-                <p><b>Completed Course:</b> Algorithms, Data Structures, Computation Structures, Java Android App
-                    Development, UML, Operating Systems</p>
+                <p><b>Completed Course:</b> Algorithms, Data Structures, Computation Structures, Java Android App Development, UML, Operating Systems</p>
                 <p><b>Ongoing Course:</b> Database and Big Data, ML, Introduction to Investment, MicroEconomics</p>
                 <p>September 2022 - May 2026</p>
             </>
         ),
     },
-]
+];
+
+export const educationDetails = [
+    {
+        institution: "Singapore University of Technology and Design (SUTD)",
+        program: "Bachelor of Engineering, Computer Science & Design",
+        period: "Sep 2022 - Apr 2026",
+        highlights: [
+            "Expected graduation with Second Upper Honours",
+            "CS Core Modules: Algorithms, Data Structures, Computation Structures, Android App Development, Operating Systems, Network, UI Design, Cloud Computing and IOT, Software Testing (TBC).",
+            "Financial Technology Specialisation: Microeconomics, Introduction to Investment",
+            "Data Analytics Specialisation: Machine Learning, Computational Data Science (TBC), Database and Big Data",
+            "Awarded the ASEAN Scholarship"
+        ],
+    },
+];
 
 // Skills List
 export const skills = [
@@ -42,8 +56,9 @@ export const skills = [
 
 // Contact Information
 export const contactLinks = [
-    { name: "WhatsApp", url: "https://wa.me/6588508275", img: "https://cdn-icons-png.flaticon.com/512/733/733585.png" },
-    { name: "Email", url: "mailto:yuen_lam@mymail.sutd.edu.sg", img: "https://cdn-icons-png.flaticon.com/512/732/732200.png" },
+    { name: "My Resume", url: "https://tinyurl.com/LamYuEnResume", img: "https://cdn-icons-png.flaticon.com/512/724/724933.png" },
     { name: "LinkedIn", url: "https://linkedin.com/in/lam-yu-en/", img: "https://cdn-icons-png.flaticon.com/512/174/174857.png" },
     { name: "GitHub", url: "https://github.com/samuellam123", img: "https://cdn-icons-png.flaticon.com/512/25/25231.png" },
+    { name: "Email", url: "mailto:yuen_lam@mymail.sutd.edu.sg", img: "https://cdn-icons-png.flaticon.com/512/732/732200.png" },
+    { name: "WhatsApp", url: "https://wa.me/6588508275", img: "https://cdn-icons-png.flaticon.com/512/733/733585.png" },
 ];

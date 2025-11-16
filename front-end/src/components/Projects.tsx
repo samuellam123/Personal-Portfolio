@@ -27,7 +27,7 @@ export default function Projects() {
     })();
 
     return (
-        <Flex gap={"large"} vertical style={{ backgroundColor: "#f0f0f0", padding: "5% 5% 0% 5%" }}>
+        <Flex gap={"large"} vertical style={{ width: '100%', padding: "48px 0" }}>
             <Title>My Projects</Title>
             <Text>
                 Explore my collection of websites and applications that I have developed. More projects are available on my <a style={{ color: 'darkblue' }} target="_blank" rel="noreferrer" href={linkedInProfileUrl}>LinkedIn profiles</a> — follow along for updates and insights!
@@ -143,7 +143,6 @@ export default function Projects() {
                 )}
             </Flex >
 
-            <Divider style={{ marginTop: "64px" }} />
         </Flex >
     );
 }

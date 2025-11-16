@@ -1,19 +1,16 @@
 'use client';
 
-import { Flex, Image, Timeline, Tooltip, Typography, } from "antd";
+import { Flex, Image, Tooltip, Typography, } from "antd";
 
-import { contactLinks, skills, timelineItems } from "../data/aboutData";
+import { contactLinks, skills } from "../data/aboutData";
 
 const { Title } = Typography
 
 export default function About() {
     return (
         <>
-            <Flex gap={"large"} vertical style={{ backgroundColor: "#f0f0f0", padding: "5%" }}>
+            <Flex gap={"large"} vertical style={{ width: '100%', padding: "48px 0" }}>
                 <Title >About</Title>
-
-                <Title level={4}>Education</Title>
-                <Timeline items={timelineItems} />
 
                 <Title level={4}>Skills</Title>
                 <Flex wrap gap="large">

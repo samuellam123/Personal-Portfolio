@@ -1,3 +1,7 @@
+:root {
+  font-size: 16px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,6 +11,18 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: #ffffff;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #111827;
+}
+
+p,
+.ant-typography,
+.ant-typography p,
+.ant-typography span {
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 a {
