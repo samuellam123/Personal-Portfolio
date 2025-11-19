@@ -1,11 +1,12 @@
 'use client';
 
 import { DownOutlined } from '@ant-design/icons';
-import { Alert, Button, Flex, Image, Typography } from "antd";
+import { Alert, Button, Flex, Grid, Image, Typography } from "antd";
 import HomeText, { profilebanner } from "../data/homeData";
 import { profilepic, name } from "../data/homeData";
 
 const { Title } = Typography
+const { useBreakpoint } = Grid;
 
 type HomeProps = {
     focus?: string;
@@ -32,19 +33,30 @@ const focusHighlights: Record<string, { label: string; blurb: string; actionLabe
 export default function Home({ focus }: HomeProps = {}) {
     const normalizedFocus = focus?.toLowerCase();
     const focusInfo = normalizedFocus ? focusHighlights[normalizedFocus] : undefined;
-    const primaryButtonHref = focusInfo ? "#experience" : "#experience";
+    const primaryButtonHref = focusInfo ? "#education" : "#education";
     const primaryButtonLabel = focusInfo?.actionLabel ?? "Scroll down to view more";
+    const screens = useBreakpoint();
+    const isDesktop = screens.md;
 
     return (
         <>
-            <Flex align="center" justify="space-between" wrap style={{
-                justifySelf: 'center',
-                width: '100%',
-                padding: "48px 0",
-                gap: '32px'
-            }}
+            <Flex
+                align={isDesktop ? "center" : "stretch"}
+                justify={isDesktop ? "space-between" : "center"}
+                wrap
+                style={{
+                    justifySelf: 'center',
+                    width: '100%',
+                    padding: "48px 0",
+                    gap: '32px',
+                    flexDirection: isDesktop ? 'row' : 'column'
+                }}
             >
-                <Flex gap='large' vertical style={{ maxWidth: '55%' }}>
+                <Flex
+                    gap='large'
+                    vertical
+                    style={{ maxWidth: isDesktop ? '55%' : '100%' }}
+                >
                     <Title style={{ margin: 0 }}>{name}</Title>
                     <HomeText />
                     {focusInfo && (
@@ -60,8 +72,9 @@ export default function Home({ focus }: HomeProps = {}) {
                         icon={<DownOutlined />}
                         type="primary"
                         style={{
-                            minWidth: "230px",
-                            maxWidth: "320px",
+                            width: isDesktop ? 'auto' : '100%',
+                            minWidth: isDesktop ? "230px" : undefined,
+                            maxWidth: isDesktop ? "320px" : '100%',
                             borderRadius: 999,
                             backgroundImage: 'linear-gradient(135deg, #1677ff, #60a5fa)',
                             border: 'none',
@@ -71,12 +84,21 @@ export default function Home({ focus }: HomeProps = {}) {
                         {primaryButtonLabel}
                     </Button>
                 </Flex>
-                <Image
-                    width={'40%'}
-                    src={profilebanner}
-                    alt={name}
-                    style={{ borderRadius: '10%', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', border: '2px solid #ccc' }}
-                />
+                <Flex
+                    justify="center"
+                    align="center"
+                    style={{
+                        width: isDesktop ? '40%' : '100%',
+                        order: isDesktop ? 0 : -1
+                    }}
+                >
+                    <Image
+                        width={'100%'}
+                        src={profilebanner}
+                        alt={name}
+                        style={{ borderRadius: '10%', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', border: '2px solid #ccc' }}
+                    />
+                </Flex>
             </Flex>
 
         </>

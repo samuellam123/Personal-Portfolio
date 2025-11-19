@@ -1,6 +1,7 @@
 'use client';
 
 import { Button, Flex, Tag, Typography } from "antd";
+import { ExportOutlined } from '@ant-design/icons';
 
 import { experienceList } from "../data/experienceData";
 
@@ -22,10 +23,40 @@ export default function Experiences() {
                         paddingBottom: 32
                     }}
                 >
-                    <Title level={3} style={{ margin: 0 }}>{experience.company}</Title>
-                    <Text type="secondary" style={{ fontSize: '16px' }}>
-                        {experience.role} ·  {experience.period}
-                    </Text>
+                    <Flex align="center" justify="space-between" wrap gap="small">
+                        <div>
+                            <Title level={3} style={{ margin: 0 }}>{experience.company}</Title>
+                            <Text type="secondary" style={{ fontSize: '16px' }}>
+                                {experience.role} ·  {experience.period}
+                            </Text>
+                        </div>
+                        {(experience.direct_link || experience.sub_link) && (
+                            <Flex gap="small" wrap>
+                                {experience.sub_link && (
+                                    <Button
+                                        href={experience.sub_link.link}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        type="default"
+                                        icon={<ExportOutlined />}
+                                    >
+                                        {experience.sub_link.label}
+                                    </Button>
+                                )}
+                                {experience.direct_link && (
+                                    <Button
+                                        href={experience.direct_link.link}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        type="default"
+                                        icon={<ExportOutlined />}
+                                    >
+                                        {experience.direct_link.label}
+                                    </Button>
+                                )}
+                            </Flex>
+                        )}
+                    </Flex>
 
                     <ul style={{ margin: '12px 0 0', paddingLeft: 0, listStylePosition: 'inside' }}>
                         {experience.bullet_points.map((bullet) => (
@@ -41,20 +72,6 @@ export default function Experiences() {
                         </Flex>
                     ) : null}
 
-                    {(experience.direct_link || experience.sub_link) && (
-                        <Flex gap="small" style={{ paddingTop: '12px' }}>
-                            {experience.sub_link && (
-                                <Button href={experience.sub_link.link} target="_blank" rel="noreferrer">
-                                    {experience.sub_link.label}
-                                </Button>
-                            )}
-                            {experience.direct_link && (
-                                <Button type="primary" href={experience.direct_link.link} target="_blank" rel="noreferrer">
-                                    {experience.direct_link.label}
-                                </Button>
-                            )}
-                        </Flex>
-                    )}
                 </Flex>
             ))}
         </Flex>

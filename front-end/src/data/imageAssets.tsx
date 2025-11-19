@@ -17,4 +17,10 @@ export const imageAssets: Record<string, string> = {
     epicgames: `${basePath}/epic-games.png`,
     fortnite: `${basePath}/fortnite.png`,
     obstaxlandingpage: `${basePath}/obstaxlandingpage.png`,
+    pwc: `${basePath}/pwc.jpeg`,
+    nyea: `${basePath}/nyea.jpg`,
+    saa: `${basePath}/saa.jpg`,
+    usm: `${basePath}/usm.jpg`,
+    asean: `${basePath}/asean.jpg`,
+    c4g: `${basePath}/c4g.jpg`,
 };
