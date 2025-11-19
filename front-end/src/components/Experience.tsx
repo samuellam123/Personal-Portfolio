@@ -1,119 +1,79 @@
-import { Flex, Typography, Card, Tag, Divider, Modal, Image, Button } from "antd";
-import { useState } from 'react';
-import { experienceList, Experience } from "../data/experienceData";
+'use client';
 
-const { Title, Text } = Typography
-const { Meta } = Card;
+import { Button, Flex, Tag, Typography } from "antd";
+import { ExportOutlined } from '@ant-design/icons';
+
+import { experienceList } from "../data/experienceData";
+
+const { Title, Text } = Typography;
 
 export default function Experiences() {
-    const [selectedExp, setselectedExp] = useState<Experience | null>(null);
-
     return (
-        <Flex gap={"large"} vertical style={{ backgroundColor: "#f0f0f0", padding: "5% 5% 0% 5%" }}>
-            <Title>My Experience</Title>
-            <Text>
-                A journey through gaming support, entrepreneurship, and product design - building strong foundations in problem-solving, coding, and digital product development.
-            </Text>
+        <Flex gap={"large"} vertical style={{ width: '100%' }}>
+            <Title>Work Experience</Title>
 
-            <Flex wrap gap={"large"}>
-                {experienceList.map((experience, index) => (
-                    <Card
-                        key={index}
-                        hoverable
-                        style={{ width: 400 }}
-                        onClick={() => setselectedExp(experience)}
-                        cover={<img alt="experience pic" src={experience.img} loading="lazy" style={{ height: "400px", objectFit: 'contain', padding: '5%' }} />}
-                    >
-                        <Meta title={experience.title} description={experience.description} />
-                        <Flex wrap style={{ paddingTop: "24px" }}>
-                            {experience.technology && experience.technology.map((tag) =>
-                                <Tag>{tag}</Tag>
-                            )}
-                        </Flex>
-                    </Card>
-                ))}
-
-                {/* Modal for experience details */}
-                {selectedExp && (
-                    <Modal
-                        title={selectedExp.title}
-                        centered
-                        open={!!selectedExp}
-                        onCancel={() => setselectedExp(null)}
-                        height={"80%"}
-                        width={{
-                            xs: '90%',
-                            sm: '80%',
-                            md: '80%',
-                            lg: '70%',
-                            xl: '50%',
-                            xxl: '40%',
-                        }}
-                        footer={[
-                            selectedExp.sub_link && (
-                                <Button key="link" href={selectedExp.sub_link.link} target="_blank">
-                                    {selectedExp.sub_link.label}
-                                </Button>
-                            ),
-                            selectedExp.direct_link && (
-                                <Button type="primary" key="link" href={selectedExp.direct_link.link} target="_blank">
-                                    {selectedExp.direct_link.label}
-                                </Button>
-                            ),
-                        ]}
-                    >
-                        <Flex vertical>
-                            <Flex justify="center" style={{ padding: '5% 0%' }}>
-                                <Image
-                                    width={'50%'}
-                                    src={selectedExp.img}
-                                    alt={selectedExp.title}
-                                />
-                                {selectedExp.sub_img && (
-                                    <Image
-                                        width={'50%'}
-                                        src={selectedExp.sub_img}
-                                        alt={selectedExp.title}
-                                    />)}
-                            </Flex>
-
-                            <Title level={5}>📝 Experience Overview</Title>
-                            <Text><b>Period:</b> {selectedExp.period}</Text>
-                            <Text><b>Location:</b> {selectedExp.location}</Text>
-
-                            {selectedExp.longer_desc}
-
-                            {selectedExp.responsibilities && (<>
-                                <Title level={5} style={{ margin: 0 }}>💡 Key Responsibilities</Title><ul>
-                                    {selectedExp.responsibilities.map((responsibility, index) => (
-                                        <li key={index}>{responsibility}</li>
-                                    ))}
-                                </ul>
-                            </>
-                            )}
-
-                            {selectedExp.key_achievements && (<>
-                                <Title level={5} style={{ margin: 0 }}>🏆 Key Achivements</Title><ul>
-                                    {selectedExp.key_achievements.map((key_achievement, index) => (
-                                        <li key={index}>{key_achievement}</li>
-                                    ))}
-                                </ul>
-                            </>
-                            )}
-
-                            <Flex wrap style={{ paddingTop: "24px" }}>
-                                {selectedExp.technology && selectedExp.technology.map((tag, index) =>
-                                    <Tag key={index}>{tag}</Tag>
+            {experienceList.map((experience, index) => (
+                <Flex
+                    key={experience.company}
+                    vertical
+                    gap="small"
+                    style={{
+                        borderTop: index === 0 ? 'none' : '1px solid #e5e7eb',
+                        paddingTop: index === 0 ? 0 : 32,
+                        paddingBottom: 32
+                    }}
+                >
+                    <Flex align="center" justify="space-between" wrap gap="small">
+                        <div>
+                            <Title level={3} style={{ margin: 0 }}>{experience.company}</Title>
+                            <Text type="secondary" style={{ fontSize: '16px' }}>
+                                {experience.role} ·  {experience.period}
+                            </Text>
+                        </div>
+                        {(experience.direct_link || experience.sub_link) && (
+                            <Flex gap="small" wrap>
+                                {experience.sub_link && (
+                                    <Button
+                                        href={experience.sub_link.link}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        type="default"
+                                        icon={<ExportOutlined />}
+                                    >
+                                        {experience.sub_link.label}
+                                    </Button>
+                                )}
+                                {experience.direct_link && (
+                                    <Button
+                                        href={experience.direct_link.link}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        type="default"
+                                        icon={<ExportOutlined />}
+                                    >
+                                        {experience.direct_link.label}
+                                    </Button>
                                 )}
                             </Flex>
+                        )}
+                    </Flex>
 
+                    <ul style={{ margin: '12px 0 0', paddingLeft: 0, listStylePosition: 'inside' }}>
+                        {experience.bullet_points.map((bullet) => (
+                            <li key={bullet} style={{ marginBottom: '4px', fontSize: '16px' }}>{bullet}</li>
+                        ))}
+                    </ul>
+
+                    {experience.technology?.length ? (
+                        <Flex wrap gap="small" style={{ paddingTop: "12px" }}>
+                            {experience.technology.map((tag) => (
+                                <Tag key={`${experience.company}-${tag}`}>{tag}</Tag>
+                            ))}
                         </Flex>
-                    </Modal>
-                )
-                }
-            </Flex >
+                    ) : null}
 
-            <Divider style={{ marginTop: "64px" }} />
-        </Flex >
+                </Flex>
+            ))}
+        </Flex>
     );
 }

@@ -1,7 +1,7 @@
-import { Anchor, Button, Flex, Grid, Typography, type AnchorProps } from 'antd';
-import { DownloadOutlined } from '@ant-design/icons';
+'use client';
 
-import { ResumeLink } from '../data/headerData';
+import { DownloadOutlined } from '@ant-design/icons';
+import { Anchor, Button, Flex, Grid, Typography, type AnchorProps } from 'antd';
 
 const { Title } = Typography;
 const { useBreakpoint } = Grid;
@@ -50,7 +50,6 @@ export default function WebHeader() {
                     <Anchor
                         direction="horizontal"
                         items={items}
-                        offsetTop={64}
                         affix={false}
                         style={{
                             backgroundColor: 'white',
@@ -61,7 +60,13 @@ export default function WebHeader() {
 
                     {/* Hide title on small screens */}
                     {!isSmallerScreen && (
-                        <Button iconPosition="end" href={ResumeLink} target="__blank" icon={<DownloadOutlined />}>
+                        <Button
+                            iconPosition="end"
+                            href="https://tinyurl.com/LamYuEnResume"
+                            target="_blank"
+                            rel="noreferrer"
+                            icon={<DownloadOutlined />}
+                        >
                             Download Resume
                         </Button>
                     )}

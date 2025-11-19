@@ -1,36 +1,26 @@
-import test from "../assets/images/test.webp";
-import dbsWebapp from "../assets/images/dbs_webapp.gif";
-import dbsWebapp_ocr from "../assets/images/dbs_webapp_ocr.gif";
-import portfolio from "../assets/images/portfolio.png";
-import playem from "../assets/images/playem.png";
-import playem_display from "../assets/images/playem_display.png";
-import crypto_swap from "../assets/images/crypto_swap.png";
-import cook4good from "../assets/images/cook4good.png";
-import cuby1 from "../assets/images/cuby1.png";
-import cuby2 from "../assets/images/cuby2.png";
-import gic from "../assets/images/GIC.jpg";
-import obstax from "../assets/images/obstax.jpg";
-import ta from "../assets/images/ta.jpg";
-import fortnite from "../assets/images/fortnite.png";
-import epicgames from "../assets/images/epic games.png";
-import obstaxlandingpage from "../assets/images/obstaxlandingpage.png";
-
+const basePath = "/images";
 
 export const imageAssets: Record<string, string> = {
-    test,
-    dbsWebapp,
-    dbsWebapp_ocr,
-    portfolio,
-    playem,
-    playem_display,
-    crypto_swap,
-    cook4good,
-    cuby1,
-    cuby2,
-    gic,
-    obstax,
-    ta,
-    epicgames,
-    fortnite,
-    obstaxlandingpage
+    test: `${basePath}/test.webp`,
+    dbsWebapp: `${basePath}/dbs_webapp.gif`,
+    dbsWebapp_ocr: `${basePath}/dbs_webapp_ocr.gif`,
+    portfolio: `${basePath}/portfolio.png`,
+    playem: `${basePath}/playem.png`,
+    playem_display: `${basePath}/playem_display.png`,
+    crypto_swap: `${basePath}/crypto_swap.png`,
+    cook4good: `${basePath}/cook4good.png`,
+    cuby1: `${basePath}/cuby1.png`,
+    cuby2: `${basePath}/cuby2.png`,
+    gic: `${basePath}/GIC.jpg`,
+    obstax: `${basePath}/obstax.jpg`,
+    ta: `${basePath}/ta.jpg`,
+    epicgames: `${basePath}/epic-games.png`,
+    fortnite: `${basePath}/fortnite.png`,
+    obstaxlandingpage: `${basePath}/obstaxlandingpage.png`,
+    pwc: `${basePath}/pwc.jpeg`,
+    nyea: `${basePath}/nyea.jpg`,
+    saa: `${basePath}/saa.jpg`,
+    usm: `${basePath}/usm.jpg`,
+    asean: `${basePath}/asean.jpg`,
+    c4g: `${basePath}/c4g.jpg`,
 };
