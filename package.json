@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "dev": "npm run dev --prefix front-end",
+    "build": "npm run build --prefix front-end",
+    "lint": "npm run lint --prefix front-end"
+  },
   "dependencies": {
     "antd": "^5.23.1",
     "papaparse": "^5.5.2"
