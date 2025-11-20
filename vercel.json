@@ -1,4 +1,9 @@
 {
-  "buildCommand": "npm run build",
+  "projects": {
+    "default": {
+      "source": "front-end"
+    }
+  },
+  "buildCommand": "cd front-end && npm run build",
   "outputDirectory": "front-end/.next"
 }
