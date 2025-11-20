@@ -8,7 +8,6 @@ import { MenuOutlined } from '@ant-design/icons';
 import { contactLinks } from "../data/aboutData";
 import { name, profilepic } from "../data/homeData";
 import WebContent from "./WebContent";
-import { Analytics } from "@vercel/analytics/react";
 
 const { Sider, Content } = Layout;
 const { Title, Text } = Typography;
