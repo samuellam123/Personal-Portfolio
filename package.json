@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "npm run dev --prefix front-end",
-    "build": "next build front-end",
+    "build": "cd front-end && npm run build",
     "lint": "npm run lint --prefix front-end"
   },
   "dependencies": {
