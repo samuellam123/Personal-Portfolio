@@ -40,6 +40,16 @@ export default function WebLayout({ focus }: WebLayoutProps = {}) {
     const isDesktop = screens.md;
     const [drawerOpen, setDrawerOpen] = useState(false);
 
+    const handleAnchorClick: AnchorProps['onClick'] = (_e, link) => {
+        const targetId = link?.href?.replace('#', '');
+        if (targetId) {
+            document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        if (!isDesktop) {
+            setDrawerOpen(false);
+        }
+    };
+
     return (
         <Layout style={{ minHeight: "100vh" }}>
             {isDesktop ? (
@@ -51,7 +61,7 @@ export default function WebLayout({ focus }: WebLayoutProps = {}) {
                     height: '100vh',
                     overflow: 'hidden',
                 }}>
-                    <SidebarContent />
+                    <SidebarContent onAnchorClick={handleAnchorClick} />
                 </Sider>
             ) : (
                 <>
@@ -72,7 +82,7 @@ export default function WebLayout({ focus }: WebLayoutProps = {}) {
                         open={drawerOpen}
                         onClose={() => setDrawerOpen(false)}
                     >
-                        <SidebarContent onNavigate={() => setDrawerOpen(false)} />
+                        <SidebarContent onAnchorClick={handleAnchorClick} />
                     </Drawer>
                 </>
             )}
@@ -94,10 +104,10 @@ export default function WebLayout({ focus }: WebLayoutProps = {}) {
 }
 
 type SidebarContentProps = {
-    onNavigate?: () => void;
+    onAnchorClick?: AnchorProps['onClick'];
 };
 
-function SidebarContent({ onNavigate }: SidebarContentProps) {
+function SidebarContent({ onAnchorClick }: SidebarContentProps) {
     return (
         <Flex vertical justify="space-between" style={{ height: '100%', padding: '32px 24px' }}>
             <Flex vertical gap="middle">
@@ -116,7 +126,7 @@ function SidebarContent({ onNavigate }: SidebarContentProps) {
                     direction="vertical"
                     items={navItems}
                     style={{ background: 'transparent' }}
-                    onClick={() => onNavigate?.()}
+                    onClick={onAnchorClick}
                 />
             </Flex>
 
