@@ -36,8 +36,8 @@ const navItems: AnchorItem[] = [
 ];
 
 export default function WebLayout({ focus }: WebLayoutProps = {}) {
-    const contentRef = useRef<HTMLDivElement | null>(null);
-    const getContainer = () => contentRef.current ?? window;
+    const scrollRef = useRef<HTMLDivElement | null>(null);
+    const getContainer = () => scrollRef.current ?? window;
     const screens = useBreakpoint();
     const isDesktop = screens.md;
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -81,15 +81,22 @@ export default function WebLayout({ focus }: WebLayoutProps = {}) {
 
             <Layout style={{ background: 'white', display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
                 <Content
-                    ref={contentRef}
                     style={{
                         flex: 1,
-                        overflowY: 'auto',
-                        padding: '0 64px 48px',
-                        scrollBehavior: 'smooth'
+                        overflow: 'hidden'
                     }}
                 >
-                    <WebContent focus={focus} />
+                    <div
+                        ref={scrollRef}
+                        style={{
+                            height: '100%',
+                            overflowY: 'auto',
+                            padding: '0 64px 48px',
+                            scrollBehavior: 'smooth'
+                        }}
+                    >
+                        <WebContent focus={focus} />
+                    </div>
                 </Content>
                 <div style={{ textAlign: 'center', padding: '12px 0' }}>
                     © 2025 Samuel Lam. All rights reserved. Built with Next.js & TypeScript. Deployed on Vercel. Last updated Nov 2025.
