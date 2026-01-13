@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 import { Anchor, Button, Drawer, Flex, Grid, Image, Layout, Typography, type AnchorProps } from "antd";
 import { MenuOutlined } from '@ant-design/icons';
@@ -36,8 +36,6 @@ const navItems: AnchorItem[] = [
 ];
 
 export default function WebLayout({ focus }: WebLayoutProps = {}) {
-    const scrollRef = useRef<HTMLDivElement | null>(null);
-    const getContainer = () => scrollRef.current ?? window;
     const screens = useBreakpoint();
     const isDesktop = screens.md;
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -53,7 +51,7 @@ export default function WebLayout({ focus }: WebLayoutProps = {}) {
                     height: '100vh',
                     overflow: 'hidden',
                 }}>
-                    <SidebarContent getContainer={getContainer} />
+                    <SidebarContent />
                 </Sider>
             ) : (
                 <>
@@ -74,7 +72,7 @@ export default function WebLayout({ focus }: WebLayoutProps = {}) {
                         open={drawerOpen}
                         onClose={() => setDrawerOpen(false)}
                     >
-                        <SidebarContent getContainer={getContainer} onNavigate={() => setDrawerOpen(false)} />
+                        <SidebarContent onNavigate={() => setDrawerOpen(false)} />
                     </Drawer>
                 </>
             )}
@@ -82,21 +80,10 @@ export default function WebLayout({ focus }: WebLayoutProps = {}) {
             <Layout style={{ background: 'white', display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
                 <Content
                     style={{
-                        flex: 1,
-                        overflow: 'hidden'
+                        padding: '0 64px 48px'
                     }}
                 >
-                    <div
-                        ref={scrollRef}
-                        style={{
-                            height: '100%',
-                            overflowY: 'auto',
-                            padding: '0 64px 48px',
-                            scrollBehavior: 'smooth'
-                        }}
-                    >
-                        <WebContent focus={focus} />
-                    </div>
+                    <WebContent focus={focus} />
                 </Content>
                 <div style={{ textAlign: 'center', padding: '12px 0' }}>
                     © 2025 Samuel Lam. All rights reserved. Built with Next.js & TypeScript. Deployed on Vercel. Last updated Nov 2025.
@@ -107,11 +94,10 @@ export default function WebLayout({ focus }: WebLayoutProps = {}) {
 }
 
 type SidebarContentProps = {
-    getContainer: () => HTMLElement | Window;
     onNavigate?: () => void;
 };
 
-function SidebarContent({ getContainer, onNavigate }: SidebarContentProps) {
+function SidebarContent({ onNavigate }: SidebarContentProps) {
     return (
         <Flex vertical justify="space-between" style={{ height: '100%', padding: '32px 24px' }}>
             <Flex vertical gap="middle">
@@ -128,7 +114,6 @@ function SidebarContent({ getContainer, onNavigate }: SidebarContentProps) {
                 <Anchor
                     affix={false}
                     direction="vertical"
-                    getContainer={getContainer}
                     items={navItems}
                     style={{ background: 'transparent' }}
                     onClick={() => onNavigate?.()}
