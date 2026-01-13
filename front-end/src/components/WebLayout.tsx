@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 import { Anchor, Button, Drawer, Flex, Grid, Image, Layout, Typography, type AnchorProps } from "antd";
 import { MenuOutlined } from '@ant-design/icons';
@@ -36,11 +36,19 @@ const navItems: AnchorItem[] = [
 ];
 
 export default function WebLayout({ focus }: WebLayoutProps = {}) {
-    const contentRef = useRef<HTMLDivElement | null>(null);
-    const getContainer = () => contentRef.current ?? window;
     const screens = useBreakpoint();
     const isDesktop = screens.md;
     const [drawerOpen, setDrawerOpen] = useState(false);
+
+    const handleAnchorClick: AnchorProps['onClick'] = (_e, link) => {
+        const targetId = link?.href?.replace('#', '');
+        if (targetId) {
+            document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        if (!isDesktop) {
+            setDrawerOpen(false);
+        }
+    };
 
     return (
         <Layout style={{ minHeight: "100vh" }}>
@@ -53,7 +61,7 @@ export default function WebLayout({ focus }: WebLayoutProps = {}) {
                     height: '100vh',
                     overflow: 'hidden',
                 }}>
-                    <SidebarContent getContainer={getContainer} />
+                    <SidebarContent onAnchorClick={handleAnchorClick} />
                 </Sider>
             ) : (
                 <>
@@ -73,21 +81,16 @@ export default function WebLayout({ focus }: WebLayoutProps = {}) {
                         width={260}
                         open={drawerOpen}
                         onClose={() => setDrawerOpen(false)}
-                        bodyStyle={{ padding: 0 }}
                     >
-                        <SidebarContent getContainer={getContainer} onNavigate={() => setDrawerOpen(false)} />
+                        <SidebarContent onAnchorClick={handleAnchorClick} />
                     </Drawer>
                 </>
             )}
 
             <Layout style={{ background: 'white', display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
                 <Content
-                    ref={contentRef}
                     style={{
-                        flex: 1,
-                        overflowY: 'auto',
-                        padding: '0 64px 48px',
-                        scrollBehavior: 'smooth'
+                        padding: '0 64px 48px'
                     }}
                 >
                     <WebContent focus={focus} />
@@ -101,11 +104,10 @@ export default function WebLayout({ focus }: WebLayoutProps = {}) {
 }
 
 type SidebarContentProps = {
-    getContainer: () => HTMLElement | Window;
-    onNavigate?: () => void;
+    onAnchorClick?: AnchorProps['onClick'];
 };
 
-function SidebarContent({ getContainer, onNavigate }: SidebarContentProps) {
+function SidebarContent({ onAnchorClick }: SidebarContentProps) {
     return (
         <Flex vertical justify="space-between" style={{ height: '100%', padding: '32px 24px' }}>
             <Flex vertical gap="middle">
@@ -122,10 +124,9 @@ function SidebarContent({ getContainer, onNavigate }: SidebarContentProps) {
                 <Anchor
                     affix={false}
                     direction="vertical"
-                    getContainer={getContainer}
                     items={navItems}
                     style={{ background: 'transparent' }}
-                    onClick={() => onNavigate?.()}
+                    onClick={onAnchorClick}
                 />
             </Flex>
 

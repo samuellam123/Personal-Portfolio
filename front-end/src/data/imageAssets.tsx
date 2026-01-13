@@ -23,4 +23,7 @@ export const imageAssets: Record<string, string> = {
     usm: `${basePath}/usm.jpg`,
     asean: `${basePath}/asean.jpg`,
     c4g: `${basePath}/c4g.jpg`,
+    singtel: `${basePath}/Singtel_Top_Team.jpg`,
+    fabwatcher: `${basePath}/fabwatcher.jpg`,
+    fabwatcher2: `${basePath}/fabwatcher_failed.jpg`,
 };

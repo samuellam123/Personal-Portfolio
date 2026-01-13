@@ -46,10 +46,18 @@ export const awards: Award[] = [
         img: imageAssets.usm,
     },
     {
+        title: "Singtel Information Systems and Programming Awards 2024 - 1st Prize",
+        issuer: "Singtel, Singapore",
+        period: "Apr 2024",
+        description: "Recognised as the top team for outstanding performance in information systems and programming project.",
+        img: imageAssets.singtel,
+    },
+    {
         title: "ASEAN Scholar - Awardee",
         issuer: "ASEAN Scholarship, Singapore",
-        period: "Sept 2022",
+        period: "Sep 2022",
         description: "Honoured as an ASEAN Scholar for academic excellence and leadership potential prior to joining SUTD.",
         img: imageAssets.asean,
     },
+
 ];

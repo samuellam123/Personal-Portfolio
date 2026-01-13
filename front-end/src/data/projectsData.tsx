@@ -59,6 +59,57 @@ export const projectList: Project[] = [
         direct_link: { label: "Project Site", link: "https://sites.google.com/view/next-gen-ai/" }
     },
     {
+        title: "Fabwatcher Cloud Dashboard",
+        description: "A responsive cloud dashboard for real-time 3D printer farm monitoring, deployed on AWS.",
+        longer_desc: <>
+            As the <b>lead full-stack developer</b>, I drove the end-to-end development and deployment of this project. My key contributions include:
+            <ul style={{ paddingLeft: 0, listStylePosition: "inside" }}>
+                <li><b>Frontend Development:</b> Built a modern, responsive dashboard using <b>Next.js</b> and <b>TypeScript</b> for monitoring 3D printer activities in real-time.</li>
+                <li><b>Frontend Deployment:</b> Deployed the static site to <b>AWS S3</b>, optimizing performance with routing and caching configurations.</li>
+                <li><b>Backend Implementation:</b> Developed RESTful APIs using <b>Python + FastAPI</b>, hosted on an <b>AWS EC2</b> instance for scalable data handling and integration.</li>
+                <li><b>Database Integration:</b> Connected to <b>AWS DynamoDB</b> for real-time, high-availability NoSQL data storage and retrieval.</li>
+                <li><b>System Architecture:</b> Designed and maintained a clean architecture across services, ensuring maintainability and scalability.</li>
+            </ul>
+
+            <Title level={5}>Project Objective & Outcome:</Title>
+            The dashboard was designed to provide centralized visibility into 3D printer usage and status. It successfully streamlined operations, reduced manual intervention, and laid the foundation for future automation and alert features.
+        </>,
+        frontend: "Next.js, TypeScript (S3 Hosted)",
+        backend: "Python, FastAPI (AWS EC2)",
+        otr_tech: "AWS DynamoDB, REST APIs, API Gateway",
+        technology: ["Next.js", "TypeScript", "FastAPI", "AWS EC2", "S3", "DynamoDB"],
+        img: imageAssets.fabwatcher2,
+        sub_img: imageAssets.fabwatcher,
+        direct_link: { label: "Readme.md", link: "https://github.com/samuellam123/Fabwatcher_readme/blob/main/README.md" }
+    },
+    {
+        title: "ObstaX: Landing Page",
+        description: "A responsive landing page built with Next.js and Tailwind CSS to showcase ObstaX's product, user testimonials, FAQs, and collect pre-orders.",
+        longer_desc: <>
+            ObstaX Landing Page is a web-based platform designed to showcase our product, share user testimonials, address FAQs, and enable pre-orders.
+            Built with the Next.js with React.js and styled using Tailwind CSS, the site ensures a fast, responsive, and seamless user experience.
+
+            <Title level={5}> Key Features:</Title>
+            <ul style={{ paddingLeft: 0, listStylePosition: "inside" }}>
+                <li> <b>Product Showcase:</b> Provides detailed information about ObstaX's assistive technology solutions.</li>
+                <li> <b>User Testimonials:</b> Highlights feedback from early adopters, increasing credibility and trust.</li>
+                <li> <b>FAQs Section:</b> Addresses common questions about the product, features, and usage.</li>
+                <li> <b>Contact Us:</b> Includes a contact form for inquiries and partnership opportunities.</li>
+                <li> <b>Pre-Order Functionality:</b> Enables users to place pre-orders, gathering early interest and market demand.</li>
+                <li> <b>Performance & Responsiveness:</b> Optimized for both desktop and mobile using Tailwind CSS.</li>
+            </ul>
+
+            Stay tuned for updates by following our <b>ObstaX LinkedIn page</b> using the button below!
+        </>,
+        frontend: "ReactTSX, Tailwind CSS (UI Library)",
+        backend: "Express, Node.js, MongoDB",
+        technology: ["React.js", "Next.js", "Supabase", "Tailwind CSS"],
+        img: imageAssets.obstaxlandingpage,
+
+        direct_link: { label: "Figma Design", link: "https://www.figma.com/design/hO9DrZ6TXmS8oUadvYuktB/ObstaX-Landing-Page-(Tailwind-CSS)?node-id=7527-1206&t=eQNyjQOdDrQvAwmI-1" },
+        ongoing: true,
+    },
+    {
         title: "Mobile Bluetooth Gaming Controller",
         description: "This project aimed to transform smartphones into fully functional gaming controllers for PCs using Bluetooth connectivity, built with Java and XML in Android Studio.",
         longer_desc: <>
@@ -91,33 +142,6 @@ export const projectList: Project[] = [
         img: imageAssets.playem,
         sub_img: imageAssets.playem_display,
         direct_link: { label: "Demo Video", link: "https://youtu.be/NwHDZt8219s" }
-    },
-    {
-        title: "ObstaX: Landing Page",
-        description: "A responsive landing page built with Next.js and Tailwind CSS to showcase ObstaX's product, user testimonials, FAQs, and collect pre-orders.",
-        longer_desc: <>
-            ObstaX Landing Page is a web-based platform designed to showcase our product, share user testimonials, address FAQs, and enable pre-orders.
-            Built with the Next.js with React.js and styled using Tailwind CSS, the site ensures a fast, responsive, and seamless user experience.
-
-            <Title level={5}> Key Features:</Title>
-            <ul style={{ paddingLeft: 0, listStylePosition: "inside" }}>
-                <li> <b>Product Showcase:</b> Provides detailed information about ObstaX's assistive technology solutions.</li>
-                <li> <b>User Testimonials:</b> Highlights feedback from early adopters, increasing credibility and trust.</li>
-                <li> <b>FAQs Section:</b> Addresses common questions about the product, features, and usage.</li>
-                <li> <b>Contact Us:</b> Includes a contact form for inquiries and partnership opportunities.</li>
-                <li> <b>Pre-Order Functionality:</b> Enables users to place pre-orders, gathering early interest and market demand.</li>
-                <li> <b>Performance & Responsiveness:</b> Optimized for both desktop and mobile using Tailwind CSS.</li>
-            </ul>
-
-            Stay tuned for updates by following our <b>ObstaX LinkedIn page</b> using the button below!
-        </>,
-        frontend: "ReactTSX, Tailwind CSS (UI Library)",
-        backend: "Express, Node.js, MongoDB",
-        technology: ["ReactTSX", "Next.js"],
-        img: imageAssets.obstaxlandingpage,
-
-        direct_link: { label: "Figma Design", link: "https://www.figma.com/design/hO9DrZ6TXmS8oUadvYuktB/ObstaX-Landing-Page-(Tailwind-CSS)?node-id=7527-1206&t=eQNyjQOdDrQvAwmI-1" },
-        ongoing: true,
     },
     {
         title: "Cryptocurrency Swap Form",
