@@ -73,7 +73,6 @@ export default function WebLayout({ focus }: WebLayoutProps = {}) {
                         width={260}
                         open={drawerOpen}
                         onClose={() => setDrawerOpen(false)}
-                        bodyStyle={{ padding: 0 }}
                     >
                         <SidebarContent getContainer={getContainer} onNavigate={() => setDrawerOpen(false)} />
                     </Drawer>
